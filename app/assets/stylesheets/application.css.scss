@@ -1,0 +1,163 @@
+@mixin ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin player-sizing($size){
+  &, & > div{ height: $size; }
+  .controls{
+    width: $size;
+    .play{
+      $control-size: $size / 8;
+      border-width: $control-size;
+      left: ($size - $control-size) / 2 + $control-size / 4;
+      top: ($size - $control-size) / 2 - $control-size / 4;
+    }
+    .pause{
+      $control-size: $size / 5;
+      border-width: 0 $control-size / 5 0 $control-size / 5 !important;
+      height: $control-size !important;
+      width: $control-size / 5 !important;
+      left: ($size - $control-size) / 2 + $control-size / 5;
+      top: ($size - $control-size) / 2;
+    }
+  }
+  .time{ margin-left: $size; }
+}
+
+*{ margin: 0; padding: 0; outline-style: none; }
+
+body{
+
+  // Main Styles
+
+  p, h1, h2, h3, hr{ margin: 10px 0; }
+  h1, h2, h3, h4{ @include ellipsis; }
+  hr{ clear: both; height: 0; }
+
+  textarea{
+    height: 100px;
+    padding: 1.5%;
+    width: 97%;
+  }
+
+  // Header & Caption
+
+  .header, .footer{
+    padding: 10px 0;
+    ul{
+      list-style: none;
+      &:first-child{ float: left; }
+      &:last-child{ float: right; }
+      li{
+        display: inline-block;
+        padding: 0 10px;
+        &:last-child{ border: none; }
+      }
+    }
+  }
+
+  .caption div{ padding: 5px 20px 5px 20px; }
+
+  // Prizes
+
+  ul.prizes{ margin-left: 18px; }
+
+  // Tracks, Comments, & Creator
+
+  .track, .comment, .info{
+    & > div{
+      padding: 2%;
+      &:first-child{ float: left; width: 15%; }
+      &:last-child{ margin-left: 17%; }
+      p{ margin: 5px 0; overflow: hidden; }
+    }
+  }
+
+  .info{ h1, h2{ margin: 0; } div{ padding: 0; } }
+
+  // Voting
+
+  .vote{
+    border-spacing: 0;
+    display: table;
+    width: 100%;
+    .votes{
+      display: table-row;
+      a{ cursor: pointer; &.voted{ cursor: default; } }
+      & > *{
+        display: table-cell;
+        padding: 5px 0;
+        text-align: center;
+        width: 33%;
+      }
+    }
+  }
+
+  // Player
+
+  .player{
+    @include player-sizing(100px);
+
+    & > div{ cursor: pointer; position: relative; *{ position: absolute; } }
+
+    .controls{
+      float: left;
+      a{
+        display: block;
+        height: 70%; width: 70%;
+        left: 15%; top: 15%;
+      }
+      .play, .pause{ border-style: solid; }
+      .play{ height: 0; width: 0; }
+      .pause{ display: none; }
+    }
+
+    .time{ *{ height: 100%; } img{ display: none; width: 100%; } }
+
+    &.playing{
+      .play{ display: none; }
+      .pause{ display: block; }
+    }
+  }
+
+  // Stats
+
+  .stats ul{
+    list-style: none;
+    margin-bottom: 10px;
+    li{ padding: 5px 0; }
+  }
+
+  // Reminder
+
+  .reminder{
+    display: none;
+    &.sticky{ border: none; position: fixed; top: 0px; }
+    .player{ @include player-sizing(75px); margin-bottom: 10px; }
+  }
+
+  // Buttons
+
+  .button{
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+  }
+
+  // Mobile Devices
+
+  @media only screen and (max-width: 767px){
+    .player{ @include player-sizing(75px); }
+    .caption, .status, .stats{ display: none; }
+  }
+
+  // Misc
+
+  .fl{ float: left; }
+  .fr{ float: right; }
+  .scale-with-grid{ max-width: 100%; height: auto; }
+  .remove-bottom{ margin-bottom: 0; }
+  .half-bottom{ margin-bottom: 10px; }
+
+}

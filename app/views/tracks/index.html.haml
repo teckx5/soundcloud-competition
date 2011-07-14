@@ -1,0 +1,56 @@
+.row.clearfix.one-third.half-bottom
+
+  .caption.one-third.column
+    %div
+      %h1 Compete
+      %p Pork chop fatback short loin bacon pancetta t-bone. Ribeye ham pork loin, flank strip steak jerky short loin drumstick ham hock.
+      %p Pork chop fatback short loin bacon pancetta t-bone. Ribeye ham pork loin, flank strip steak jerky short loin drumstick ham hock.
+
+  .banner.two-thirds.column
+    = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid"
+
+.row.clearfix
+
+  .status.one-third.column
+    %h2 Competition Status
+    %p X days left to submit.
+    %h3 Submit From
+    %p July 4 > July 18, 2011
+    %h2 Share this Competition
+    %p
+      %a.button(href="http://twitter.com/share" target="_blank") Twitter
+      %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{root_url}" target="_blank") Facebook
+      %a.button(href="#" target="_blank") Tumblr
+
+  .two-thirds.column
+    %h2 About Competition
+    %p Pork chop fatback short loin bacon pancetta t-bone. Ribeye ham pork loin, flank strip steak jerky short loin drumstick ham hock. Brisket ball tip biltong sirloin pork chop. Pork tenderloin fatback shankle turkey jerky. Short ribs flank fatback, jowl beef ribs cow tail rump ground round sausage pork loin. Ribeye pastrami short loin strip steak fatback. Sirloin beef ribs swine drumstick tenderloin, pancetta ball tip fatback ham hock boudin turkey meatball.
+    %p Pancetta tongue fatback ribeye boudin pork chop, spare ribs swine drumstick chuck ground round chicken bacon tenderloin. Shank sirloin boudin meatloaf, beef short ribs swine bresaola strip steak. Shankle turkey beef ribs boudin bresaola short ribs. Ham hock beef ribs beef, hamburger pig ground round tongue pork belly ham pork drumstick boudin rump meatball. Boudin shank tail rump pastrami sausage, swine bresaola salami. Tenderloin tongue ball tip andouille corned beef. Tail chicken jerky, tenderloin fatback bacon tri-tip shank.
+
+%hr.large
+
+.row.clearfix
+
+  .eight.columns
+    %h2 Top Tracks
+    .tracks= render @top_tracks
+
+  .eight.columns
+    %h2 Latest Tracks
+    .tracks= render @latest_tracks
+
+.row.clearfix
+
+  .eight.columns
+    %hr.large
+    %h2 Prizes
+    %ul.prizes
+      %li Pork chop fatback short loin bacon pancetta t-bone.
+      %li Ribeye ham pork loin, flank strip steak jerky short loin drumstick ham hock.
+      %li Brisket ball tip biltong sirloin pork chop.
+      %li Pork tenderloin fatback shankle turkey jerky.
+
+  .eight.columns
+    %hr.large
+    %h2 Artist Name
+    %p Pork chop fatback short loin bacon pancetta t-bone. Ribeye ham pork loin, flank strip steak jerky short loin drumstick ham hock. Brisket ball tip biltong sirloin pork chop. Pork tenderloin fatback shankle turkey jerky. Short ribs flank fatback, jowl beef ribs cow tail rump ground round sausage pork loin. Ribeye pastrami short loin strip steak fatback. Sirloin beef ribs swine drumstick tenderloin, pancetta ball tip fatback ham hock boudin turkey meatball.

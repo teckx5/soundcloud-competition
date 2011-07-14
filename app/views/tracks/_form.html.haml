@@ -1,0 +1,11 @@
+= form_for @track do |f|
+
+  - if @track.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@track.errors.count, "error")} prohibited this track from being saved:
+      %ul
+      - @track.errors.full_messages.each do |msg|
+        %li= msg
+
+  %p= f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}
+  %p= f.submit "Submit"

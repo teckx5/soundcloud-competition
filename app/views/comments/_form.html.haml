@@ -1,0 +1,5 @@
+%form.new_comment
+  %input.comment_track_id(name="comment[track_id]" type="hidden"){:value => @track.tid}
+  %textarea.comment_body(name="comment[body]")
+  %p
+    %a.submit.button Post a Comment

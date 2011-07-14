@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid: 1
+  name: MyString
+  username: MyString
+  permalink: MyString
+  avatar_url: MyString
+  city: MyString
+  country: MyString
+  token: MyString
+  secret: MyString
+
+two:
+  uid: 1
+  name: MyString
+  username: MyString
+  permalink: MyString
+  avatar_url: MyString
+  city: MyString
+  country: MyString
+  token: MyString
+  secret: MyString

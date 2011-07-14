@@ -1,0 +1,8 @@
+.vote
+  .votes
+    - if current_user
+      %div= current_user.voted_on?(@track) ? "Voted" : "Vote"
+      %a.vote_for{:class => "#{'voted' if current_user.voted_for?(@track)}"} Like
+      %a.vote_against{:class => "#{'voted' if current_user.voted_against?(@track)}"} Dislike
+    - else
+      %div= link_to "Login to Score", login_link

@@ -1,0 +1,16 @@
+%script#aboutTemplate(type="text/x-jquery-tmpl")
+
+  %h3 ${title}
+
+  .creator.clearfix
+    %div
+      %a(href="${user.permalink_url}" target="_blank")
+        %img.scale-with-grid(src="${user.avatar_url}")
+    %div
+      Created by
+      %a(href="${user.permalink_url}" target="_blank") ${user.username}
+      %em ${created_at}
+      %br
+      ${description}
+
+  %hr

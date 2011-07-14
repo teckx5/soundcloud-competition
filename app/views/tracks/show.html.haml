@@ -1,0 +1,107 @@
+// Track Info & Voting
+
+.row.clearfix.remove-bottom
+  .eleven.columns.half-bottom
+    .info.clearfix
+      %div
+        = image_tag @track.artwork_url || @track.user.avatar_url, :class => "scale-with-grid", :height => 100, :width => 100, :alt => @track.user.username
+      %div
+        %h1= @track.title
+        %h2
+          Submitted by
+          = link_to @track.user.username, @track.user.link, :target => "_blank"
+          %em #{time_ago_in_words @track.created_at} ago
+
+  .voting.five.columns.half-bottom
+    = render "vote"
+
+// Player
+
+.row.clearfix.half-bottom
+  .sixteen.columns
+    = render "player"
+
+// Favorite & Navigate
+
+.row.clearfix
+  .sixteen.columns
+    .fl
+      - if current_user
+        %a.button Favorite on SoundCloud
+      - else
+        = link_to "Login to Favorite", login_link, :class => "button"
+    .fr
+      = link_to "Previous", @track.previous, :class => "button"
+      = link_to "Next", @track.next, :class => "button"
+
+%hr.large
+
+// About & Comments
+
+.row.clearfix
+
+  // About
+
+  .about.eight.columns
+
+    %h2 About this Track
+
+    .comment.owner.clearfix
+      %div
+        = link_to image_tag(@track.user.avatar_url, :class => "scale-with-grid"), @track.user.link
+      %div
+        %h4
+          Submitted by
+          = link_to @track.user.username, @track.user.link, :target => "_blank"
+          %em #{time_ago_in_words @track.created_at} ago
+        %p Loading description...
+
+    // Stats
+
+    .stats
+      %h3 Stats for this track
+      %ul
+
+    // Reminder
+
+    .reminder.eight.columns.alpha
+
+      %h2 Don't Forget to Vote
+      = render "player"
+      = render "vote"
+
+  // Sharing & Comments
+
+  .share.eight.columns
+
+    %h2 Share this Track
+
+    %p
+      %a.button(href="http://twitter.com/share" target="_blank") Twitter
+      %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{track_url(@track)}" target="_blank") Facebook
+      %a.button(href="http://www.tumblr.com/share/audio?externally_hosted_url=#{track_url(@track)}") Tumblr
+      %a.button(href="mailto:?subject=#{@track.title}&body=#{track_url(@track)}") Email
+
+    %hr.large
+
+    %h2.clearfix
+      %span.comment_count Loading Comments
+      %span.fr
+        = current_user ? link_to("Add a Comment", '#', :class => "add_comment") : link_to("Login to Comment", login_link)
+
+    .comments
+
+    - if current_user
+
+      %h3 Leave a Comment
+      = render :partial => "comments/form"
+
+// Javascript
+
+:javascript
+  var track_id = #{@track.tid},
+      secret_token = '#{@track.secret_token}';
+
+= render "about"
+= render "stats"
+= render "comments/comment"

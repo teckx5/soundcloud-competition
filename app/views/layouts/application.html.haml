@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Competition
+
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    %meta{:property => "og:title", :content => "Competition"}
+    %meta{:property => "og:description", :content => 'A competition, powered by SoundCloud.'}
+
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = javascript_include_tag "http://platform.twitter.com/widgets.js"
+    = csrf_meta_tags
+
+  %body
+    .container
+      = render "header"
+      = yield
+      = render "footer"

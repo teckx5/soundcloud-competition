@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  tid: 1
+  title: MyString
+  permalink: MyString
+  artwork_url: MyString
+  waveform_url: MyString
+
+two:
+  user_id: 1
+  tid: 1
+  title: MyString
+  permalink: MyString
+  artwork_url: MyString
+  waveform_url: MyString

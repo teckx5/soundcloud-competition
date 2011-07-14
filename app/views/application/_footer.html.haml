@@ -1,0 +1,8 @@
+.footer.row.clearfix
+  .sixteen.columns
+    %ul
+      %li= link_to "Competition", root_path
+      - if current_user
+        %li= link_to "Logout", logout_path
+    %ul
+      %li= link_to "Top", '#top'

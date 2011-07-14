@@ -1,0 +1,33 @@
+.row.clearfix
+
+  .sixteen.columns
+    %h1 Want to Submit? Here's How:
+    %hr.large
+
+.row.clearfix
+
+  .eight.columns
+
+    %div(style="padding:5px 0")
+      %h2 1. Sign Up on SoundCloud
+      %p Salami t-bone brisket short ribs pork belly, shoulder rump pork chop beef. Tongue pork bresaola drumstick fatback, ham hock rump jowl shank spare ribs tri-tip pancetta meatloaf.
+      %p
+        %a.button(href="http://soundcloud.com/signup" target="_blank") SoundCloud Sign-up
+    %hr
+
+    %div(style="padding:5px 0")
+      %h2 2. Upload your Track to SoundCloud
+      %p Salami t-bone brisket short ribs pork belly, shoulder rump pork chop beef. Tongue pork bresaola drumstick fatback, ham hock rump jowl shank spare ribs tri-tip pancetta meatloaf.
+      %p
+        %a.button(href="http://soundcloud.com/upload" target="_blank") Upload your Track
+    %br
+
+  .eight.columns(style="background:whitesmoke")
+
+    %div(style="padding:5px 15px")
+      %h2 3. Submit Your Track
+      - if current_user
+        %p Salami t-bone brisket short ribs pork belly, shoulder rump pork chop beef. Tongue pork bresaola drumstick fatback, ham hock rump jowl shank spare ribs tri-tip pancetta meatloaf.
+        = render "form"
+      - else
+        %p= link_to "Login to Submit", login_path

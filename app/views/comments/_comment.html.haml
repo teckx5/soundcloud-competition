@@ -1,0 +1,12 @@
+%script#commentTemplate(type="text/x-jquery-tmpl")
+  .comment.clearfix
+    %div
+      %a(href="${user.permalink_url}" target="_blank")
+        %img.scale-with-grid(src="${user.avatar_url}" height=100 width=100 alt="${user.username}")
+    %div
+      %h4
+        %a(href="${user.permalink_url}" target="_blank") ${user.username}
+        {{if timestamp != "0:00"}} at ${timestamp} {{/if}}
+        %em ${created_at}
+      %p
+        ${body}
