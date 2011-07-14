@@ -3,4 +3,4 @@
     = link_to image_tag(track.artwork_url || track.user.avatar_url, :class => "scale-with-grid", :height => 100, :width => 100, :alt => track.user.username), track
   %div
     %h4= link_to track.title, track
-    %p= track.user.name
+    %p= track.user.name || track.user.username
