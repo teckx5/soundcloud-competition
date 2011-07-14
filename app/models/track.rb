@@ -26,6 +26,6 @@ class Track < ActiveRecord::Base
   end
 
   def next
-    Track.find(:first, :conditions => ["id > ?", id], :order => "id DESC") || Track.first
+    Track.find(:first, :conditions => ["id > ?", id], :order => "id ASC") || Track.first
   end
 end
