@@ -1,7 +1,5 @@
 jQuery ->
 
-  window.scrollTo(0, 1)
-
   soundManager.url = '/swfs/'
   soundManager.flashVersion = 9
   soundManager.useFlashBlock = false
@@ -56,6 +54,8 @@ jQuery ->
         $.getJSON "http://api.soundcloud.com/tracks/#{track.id}/comments.json?limit=200&consumer_key=#{key}&secret_token=#{secret_token}&callback=?", (comments) ->
           $.each comments.reverse(), (i, comment) -> addComment comment
           countComments()
+
+        window.scrollTo(0, 1)
 
       # GUI Events
 
