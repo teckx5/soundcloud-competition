@@ -1,5 +1,7 @@
 jQuery ->
 
+  window.scrollTo(0, 1)
+
   soundManager.url = '/swfs/'
   soundManager.flashVersion = 9
   soundManager.useFlashBlock = false
