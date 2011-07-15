@@ -28,6 +28,7 @@ jQuery ->
         $('.info').data track
         $('.waveform').attr(src: track.waveform_url).fadeIn("slow")
         $('.about .comment p').text track.description || ""
+        $('.edit').attr href: track.permalink_url + "/edit"
 
         $("#statsTemplate").tmpl(track).appendTo('.stats ul')
 

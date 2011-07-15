@@ -27,7 +27,8 @@
   .sixteen.columns
     .fl
       - if current_user
-        %a.button Favorite on SoundCloud
+        %a.button Favorite
+        = link_to("Edit", "#", :class => "button edit", :target => "_blank") if current_user == @track.user
       - else
         = link_to "Login to Favorite", login_link, :class => "button"
     .fr

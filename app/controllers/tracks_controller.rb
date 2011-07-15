@@ -28,13 +28,9 @@ class TracksController < ApplicationController
     end
   end
 
-=begin
-
   def edit
-    @track = Track.find(params[:id])
+    redirect_to "google.com"
   end
-
-=end
 
   def create
 

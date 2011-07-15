@@ -5,4 +5,5 @@
       %a.vote_for{:class => "#{'voted' if current_user.voted_for?(@track)}"} Like
       %a.vote_against{:class => "#{'voted' if current_user.voted_against?(@track)}"} Dislike
     - else
-      %div= link_to "Login to Score", login_link
+      %div Vote
+      = link_to "Login to Score", login_link
