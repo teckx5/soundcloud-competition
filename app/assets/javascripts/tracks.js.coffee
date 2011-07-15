@@ -29,8 +29,13 @@ jQuery ->
         $('.waveform').attr(src: track.waveform_url).fadeIn("slow")
         $('.about .comment p').text track.description || ""
         $('.edit').attr href: track.permalink_url + "/edit"
-
         $("#statsTemplate").tmpl(track).appendTo('.stats ul')
+
+        # Favorite Check
+
+        if $('.favorite').length
+          $.getJSON $('.favorite').attr("href"), (data) ->
+            $('.favorite').addClass("selected") if not data.errors
 
         # Create Sound
 
@@ -76,6 +81,15 @@ jQuery ->
           error: (data) ->
             # console.log data
 
+        return false
+
+      $('.favorite').click ->
+        $that = $(@)
+        $.ajax
+          type: if $that.hasClass "selected" then 'delete' else 'put'
+          url: $that.attr "href"
+          success: () ->
+            if $that.hasClass "selected" then $that.removeClass "selected" else $that.addClass "selected"
         return false
 
       # Functions

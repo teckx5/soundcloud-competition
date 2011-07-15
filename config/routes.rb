@@ -2,6 +2,7 @@ SoundcloudSubmit::Application.routes.draw do
 
   resources :tracks
 
+  match "/tracks/:id/favorite" => 'tracks#favorite', :as => :favorite_track
   match "/submit" => 'tracks#new'
 
   match "/votes" => 'votes#create', :via => :post

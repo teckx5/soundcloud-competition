@@ -121,6 +121,10 @@ body{
     }
   }
 
+  // Favoriting
+
+  //.favorited{ background: $border !important; color: $background !important; }
+
   // Reminder
 
   .reminder{ border-top: 1px solid transparentize($border, 0.7); }
@@ -132,6 +136,7 @@ body{
     border: 1px solid $border;
     color: $text;
     &:hover{ color: $primary; }
+    &.selected{ background: $border; color: $background; }
   }
 
   // Round

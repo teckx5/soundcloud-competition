@@ -28,48 +28,27 @@ class TracksController < ApplicationController
     end
   end
 
-  def edit
-    redirect_to "google.com"
-  end
-
   def create
-
     track = MultiJson.decode(current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json").body)
-
     @track = current_user.tracks.identify_or_create_from_soundcloud(track)
-
     redirect_to @track
-
-=begin
-    @track = Track.new(params[:track])
-
-    respond_to do |format|
-      if @track.save
-        format.html { redirect_to @track, notice: 'Track was successfully created.' }
-        format.json { render json: @track, status: :created, location: @track }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
-    end
-=end
   end
 
-=begin
-
-  def update
+  def favorite
     @track = Track.find(params[:id])
 
-    respond_to do |format|
-      if @track.update_attributes(params[:track])
-        format.html { redirect_to @track, notice: 'Track was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
-      end
+    if request.method == "PUT"
+      res = current_user.soundcloud.put("/me/favorites/#{@track.tid}.json").body
+    elsif request.method == "DELETE"
+      res = current_user.soundcloud.delete("/me/favorites/#{@track.tid}.json").body
+    else
+      res = current_user.soundcloud.get("/me/favorites/#{@track.tid}.json").body
     end
+
+    render :json => res
   end
+
+=begin
 
   def destroy
     @track = Track.find(params[:id])
