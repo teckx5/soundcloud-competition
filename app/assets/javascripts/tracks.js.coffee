@@ -2,9 +2,9 @@ jQuery ->
 
   /mobile/i.test(navigator.userAgent) && setTimeout =>
     window.scrollTo(0, 1)
-    $("a").click (event) ->
-      event.preventDefault()
-      window.location = $(@).attr "href"
+    # $("a").click (event) ->
+    # event.preventDefault()
+    # window.location = $(@).attr "href"
   ,1000
 
   soundManager.url = '/swfs/'
