@@ -1,33 +1,31 @@
-.row.clearfix
+.row.clearfix.remove-bottom
 
-  .sixteen.columns
+  .sixteen.columns(style="text-align:center")
     %h1 Want to Submit? Here's How:
     %hr.large
 
 .row.clearfix
 
-  .eight.columns
+  .twelve.columns.offset-by-two
 
-    %div(style="padding:5px 0")
-      %h2 1. Sign Up on SoundCloud
-      %p Salami t-bone brisket short ribs pork belly, shoulder rump pork chop beef. Tongue pork bresaola drumstick fatback, ham hock rump jowl shank spare ribs tri-tip pancetta meatloaf.
+    %div
+      %h2 1. Sign up for SoundCloud
+      %p SoundCloud is a platform that puts your sound at the heart of communities, websites and even apps. Watch conversations, connections and social experiences happen, with your sound as the spark.
       %p
         %a.button(href="http://soundcloud.com/signup" target="_blank") SoundCloud Sign-up
-    %hr
+    %br
 
-    %div(style="padding:5px 0")
+    %div
       %h2 2. Upload your Track to SoundCloud
-      %p Salami t-bone brisket short ribs pork belly, shoulder rump pork chop beef. Tongue pork bresaola drumstick fatback, ham hock rump jowl shank spare ribs tri-tip pancetta meatloaf.
+      %p Upload your track to your SoundCloud account so it's available to submit once you login here. Be sure to include an artwork image and description.
       %p
         %a.button(href="http://soundcloud.com/upload" target="_blank") Upload your Track
     %br
 
-  .eight.columns(style="background:whitesmoke")
-
-    %div(style="padding:5px 15px")
+    %div
       %h2 3. Submit Your Track
+      %p Once you've created your SoundCloud account and uploaded your track to it, you may login below and select your track from a drop down list to include it in the competition.
       - if current_user
-        %p Salami t-bone brisket short ribs pork belly, shoulder rump pork chop beef. Tongue pork bresaola drumstick fatback, ham hock rump jowl shank spare ribs tri-tip pancetta meatloaf.
         = render "form"
       - else
         %p= link_to "Login to Submit", login_link, :class => "button"

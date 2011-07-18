@@ -1,10 +1,10 @@
-$background: white;
+$background: whitesmoke;
 $border: #D3D3D3;
 $button: #ebebeb;
 $container: transparent;
 $control: #464646;
 $header: black;
-$opaque: whitesmoke;
+$opaque: white; //whitesmoke;
 $primary: #c70112; //#20B2AA;
 $text: #555555;
 $thick: 3px;
@@ -78,7 +78,11 @@ body{
 
   .header{ background: $opaque; border-width: 0 0 $thick; }
   .footer{ border-width: $thick 0 0; }
-  .caption{ background: $opaque; }
+  .caption{
+    background: white;
+    //@include box-shadow($border, 1px);
+    //background: $opaque;
+  }
 
   // Prizes
 
@@ -106,7 +110,7 @@ body{
   .player{
     border: 1px solid $border;
     .controls{
-      background: $opaque;
+      //background: whitesmoke; //$opaque;
       a{
         @include control-gradient($control);
         @include border-radius(100px);
