@@ -38,7 +38,7 @@ jQuery ->
 
       $.getJSON "http://api.soundcloud.com/tracks/#{$player.data("track_id")}?format=json&consumer_key=#{key}&callback=?", (track) ->
 
-        $player.data(track).addClass("player_#{track.id}")
+        $player.data(track)
         $player.find('.waveform').attr(src: track.waveform_url).fadeIn("slow")
         if $('.info').length then loadInfo(track)
 
@@ -47,10 +47,10 @@ jQuery ->
           id: "track_#{track.id}"
           url: "https://api.soundcloud.com/tracks/#{track.id}/stream?consumer_key=#{key}"
           volume: 100
-          whileloading: -> $(".player_#{track.id}").find('.loaded').css width: (@bytesLoaded / @bytesTotal * 100) + '%'
-          whileplaying: -> $(".player_#{track.id}").find('.played').css width: (@position / track.duration * 100) + '%'
-          onplay:       -> $(".player_#{track.id}").find('.loaded').css width: '100%' if @loaded
-          onstop:       -> $(".player_#{track.id}").find('.time div').width 0
+          whileloading: -> $player.find('.loaded').css width: (@bytesLoaded / @bytesTotal * 100) + '%'
+          whileplaying: -> $player.find('.played').css width: (@position / track.duration * 100) + '%'
+          onplay:       -> $player.find('.loaded').css width: '100%' if @loaded
+          onstop:       -> $player.find('.time div').width 0
 
         if $('.comments').length then loadComments(track.id)
         if $('.favorite').length then loadFavorite()
