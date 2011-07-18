@@ -4,8 +4,8 @@ $button: #ebebeb;
 $container: transparent;
 $control: #464646;
 $header: black;
-$opaque: white; //whitesmoke;
-$primary: #c70112; //#20B2AA;
+$opaque: black; //whitesmoke;
+$primary: #000000; //#20B2AA;
 $text: #555555;
 $thick: 3px;
 
@@ -51,7 +51,9 @@ body{
   h1, h2, h3, h4{ color: $header; font-weight: normal; }
   hr{ border: solid transparentize($border, 0.7); border-width: 1px 0 0; &.large{ border-width: $thick 0 0; } }
   em{ color: $border; font-style: normal; }
-  textarea{ border: 1px solid transparentize($border, 0.7); &:focus{ border-color: $border; } }
+  textarea{
+    background: $background;
+    border: 1px solid transparentize($border, 0.7); &:focus{ border-color: $border; } }
 
   // Container
 
@@ -72,16 +74,20 @@ body{
   // Header & Caption
 
   .header, .footer{
+
     border: solid transparentize($border, 0.7);
     ul li{ border-right: 1px solid $border; }
   }
 
-  .header{ background: $opaque; border-width: 0 0 $thick; }
+  .header{
+    background: $opaque;
+    border: 0;
+    a{ color: white; }
+  }
   .footer{ border-width: $thick 0 0; }
   .caption{
-    background: white;
-    //@include box-shadow($border, 1px);
-    //background: $opaque;
+    background: $opaque;
+    &, h1{ color: white; }
   }
 
   // Prizes
@@ -148,7 +154,7 @@ body{
 
   // Round
 
-  textarea, .vote, .button{ @include border-radius(5px); }
+  textarea, .vote, .button{ @include border-radius(0px); }
 
   // Transition
 
