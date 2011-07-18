@@ -19,7 +19,8 @@
 
 .row.clearfix.half-bottom
   .sixteen.columns
-    = render "player"
+    .holder
+      = render :partial => "player", :locals => {:track_id => @track.tid}
 
 // Favorite & Navigate
 
@@ -68,7 +69,6 @@
     .reminder.eight.columns.alpha
 
       %h2 Don't Forget to Vote
-      = render "player"
       = render "vote"
 
   // Sharing & Comments
@@ -96,12 +96,6 @@
 
       %h3 Leave a Comment
       = render :partial => "comments/form"
-
-// Javascript
-
-:javascript
-  var track_id = #{@track.tid},
-      secret_token = '#{@track.secret_token}';
 
 = render "about"
 = render "stats"

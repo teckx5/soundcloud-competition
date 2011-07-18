@@ -100,6 +100,10 @@ body{
 
   // Player
 
+  .holder{
+    height: 100px;
+  }
+
   .player{
     @include player-sizing(100px);
 
