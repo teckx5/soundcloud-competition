@@ -22,9 +22,9 @@
         %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{root_url}" target="_blank") Facebook
         %a.button(href="#" target="_blank") Tumblr
 
-  .two-thirds.column
+  .about.two-thirds.column
     %h2 About Competition
-    %p.non-mobile <object height="81" width="100%"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F12720844&amp;show_comments=true&amp;auto_play=false&amp;color=000000"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F12720844&amp;show_comments=true&amp;auto_play=false&amp;color=000000" type="application/x-shockwave-flash" width="100%"></embed> </object>
+    = render "player"
     %p Now, we've had an idea. We all need a bit of Good Love in our lives (hence why we made a record about it), but how many of you want want some real Bad Love in your lives?
     %p We certainly do. And we mean BAD! Interpret that how you will, and whilst you are thinking about it download the special Bad Love acapella and then get to work. Do your worst; your absolute worst with it. Grimy, filthy, stinking beats coupled with the most abominable, nasty, twisted, booming bassline you can figure out. The winner takes all so this is no place for the faint hearted, and people who do not Embrace The Bass most definitely need NOT apply.
     %p Pete & Tom.
@@ -55,3 +55,7 @@
     %hr.large
     %h2 About DEVolution
     %p Chicken fatback venison pork. Chicken meatloaf salami andouille, turkey shank hamburger bresaola pancetta brisket chuck fatback biltong venison flank. Shankle andouille pork chop, cow meatball fatback sirloin. Boudin venison drumstick, pancetta ribeye short loin sirloin chicken ham jowl shank beef pork belly. Ball tip shank spare ribs, beef ribs tenderloin brisket fatback cow flank. Jowl shank meatloaf spare ribs sausage, pork shoulder drumstick bresaola ham hock ground round tenderloin swine t-bone. Sirloin strip steak meatball corned beef, salami hamburger spare ribs shankle biltong jowl tenderloin shank jerky drumstick.
+
+:javascript
+  var track_id = 12720844,
+      secret_token = "";

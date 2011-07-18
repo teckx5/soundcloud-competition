@@ -2,9 +2,6 @@ jQuery ->
 
   /mobile/i.test(navigator.userAgent) && setTimeout =>
     window.scrollTo(0, 1)
-    # $("a").click (event) ->
-    # event.preventDefault()
-    # window.location = $(@).attr "href"
   ,1000
 
   soundManager.url = '/swfs/'
@@ -32,11 +29,14 @@ jQuery ->
 
         # Load Track...
 
-        $('.info').data track
         $('.waveform').attr(src: track.waveform_url).fadeIn("slow")
-        $('.about .comment p').text track.description || ""
-        $('.edit').attr href: track.permalink_url + "/edit"
-        $("#statsTemplate").tmpl(track).appendTo('.stats ul')
+
+        $('.player').data track
+
+        if $('.info').length
+          $('.about .comment p').text track.description || ""
+          $('.edit').attr href: track.permalink_url + "/edit"
+          $("#statsTemplate").tmpl(track).appendTo('.stats ul')
 
         # Favorite Check
 
@@ -58,9 +58,11 @@ jQuery ->
           onstop: -> $('.time div').width 0
           onfinish: -> nextTrack()
 
-        $.getJSON "http://api.soundcloud.com/tracks/#{track.id}/comments.json?limit=200&consumer_key=#{key}&secret_token=#{secret_token}&callback=?", (comments) ->
-          $.each comments.reverse(), (i, comment) -> addComment comment
-          countComments()
+        if $('.comments').length
+
+          $.getJSON "http://api.soundcloud.com/tracks/#{track.id}/comments.json?limit=200&consumer_key=#{key}&secret_token=#{secret_token}&callback=?", (comments) ->
+            $.each comments.reverse(), (i, comment) -> addComment comment
+            countComments()
 
       # GUI Events
 
@@ -109,13 +111,13 @@ jQuery ->
 
         relative = Math.min loaded, (event.pageX - available) / total
 
-        soundManager.setPosition "track", $('.info').data('duration') * relative
+        soundManager.setPosition "track", $('.player').data('duration') * relative
 
       addComment = (comment) ->
         comment.created_at = $.timeago comment.created_at
         comment.timestamp = timecode comment.timestamp
         $comment = $("#commentTemplate").tmpl(comment).prependTo('.comments')
-        $comment.addClass('owner') if $('.info').data().user.id == comment.user.id
+        $comment.addClass('owner') if $('.player').data().user.id == comment.user.id
 
       countComments = () ->
         comment_count = $('.comments').children().length
@@ -123,22 +125,24 @@ jQuery ->
 
       # Reminder Scroll
 
-      $p = $('.player')
-      $r = $('.reminder')
-      $a = $('.about')
+      if $('.reminder').length
 
-      top = $p.first().position().top + $p.first().outerHeight()
+        $p = $('.player')
+        $r = $('.reminder')
+        $a = $('.about')
 
-      $(document).scroll ->
-        if $(window).width() < 767
-          $r.hide()
-        else
-          st = $(window).scrollTop()
-          if st > top
-            $r.fadeIn()
-            if st > $r.position().top
-              $r.addClass "sticky"
-            else if st < $a.position().top + $a.outerHeight()
-              $r.removeClass "sticky"
+        top = $p.first().position().top + $p.first().outerHeight()
+
+        $(document).scroll ->
+          if $(window).width() < 767
+            $r.hide()
           else
-            $r.fadeOut()
+            st = $(window).scrollTop()
+            if st > top
+              $r.fadeIn()
+              if st > $r.position().top
+                $r.addClass "sticky"
+              else if st < $a.position().top + $a.outerHeight()
+                $r.removeClass "sticky"
+            else
+              $r.fadeOut()

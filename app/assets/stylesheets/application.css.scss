@@ -138,6 +138,10 @@ body{
   .reminder{
     display: none;
     &.sticky{ border: none; position: fixed; top: 0px; }
+    //.player{ @include player-sizing(75px); margin-bottom: 10px; }
+  }
+
+  .about, .reminder{
     .player{ @include player-sizing(75px); margin-bottom: 10px; }
   }
 
