@@ -5,7 +5,7 @@ $container: transparent;
 $control: #464646;
 $header: black;
 $opaque: whitesmoke;
-$primary: #20B2AA;
+$primary: #c70112; //#20B2AA;
 $text: #555555;
 $thick: 3px;
 
@@ -82,7 +82,10 @@ body{
 
   // Prizes
 
-  ul.prizes{ list-style: square; }
+  ul.prizes{
+    font-size: 14px;
+    list-style: square;
+  }
 
   // Voting
 

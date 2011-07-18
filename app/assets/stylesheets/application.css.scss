@@ -61,7 +61,10 @@ body{
 
   // Prizes
 
-  ul.prizes{ margin-left: 18px; }
+  ul.prizes{
+    margin-left: 18px;
+    li{ margin-bottom: 10px; }
+  }
 
   // Tracks, Comments, & Creator
 
