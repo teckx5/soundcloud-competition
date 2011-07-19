@@ -1,3 +1,6 @@
+$big-player: 100px;
+$small-player: 75px;
+
 @mixin ellipsis{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -25,7 +28,7 @@
   .time{ margin-left: $size; }
 }
 
-*{ margin: 0; padding: 0; outline-style: none; -webkit-text-size-adjust: none; }
+*{ margin: 0; padding: 0; -webkit-text-size-adjust: none; outline-style: none; }
 
 body{
 
@@ -56,6 +59,8 @@ body{
       }
     }
   }
+
+  .header ul:first-child{ margin-left: 25px; }
 
   .caption div{ padding: 5px 20px 5px 20px; }
 
@@ -103,7 +108,7 @@ body{
   .holder{ height: 100px; }
 
   div.player{
-    @include player-sizing(100px);
+    @include player-sizing($big-player);
 
     & > div{ cursor: pointer; position: relative; *{ position: absolute; } }
 
@@ -156,6 +161,7 @@ body{
   // Mobile Devices
 
   @media only screen and (max-width: 767px){
+    .header ul:first-child{ margin-left: 35px; }
     .holder{ height: 75px; }
     .player{ @include player-sizing(75px); margin: 0; }
     .caption, .status, .stats{ display: none; }

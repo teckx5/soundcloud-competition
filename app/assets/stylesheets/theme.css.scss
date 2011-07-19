@@ -73,21 +73,13 @@ body{
 
   // Header & Caption
 
-  .header, .footer{
+  .header, .footer{ li{ border-right: 1px solid $border; } }
+  .header{ background: $opaque; a{ color: $background; } }
+  .footer{ border-top: $thick solid $opaque; }
 
-    border: solid transparentize($border, 0.7);
-    ul li{ border-right: 1px solid $border; }
-  }
-
-  .header{
-    background: $opaque;
-    border: 0;
-    a{ color: white; }
-  }
-  .footer{ border-width: $thick 0 0; }
   .caption{
     background: $opaque;
-    &, h1{ color: white; }
+    &, h1{ color: $background; }
   }
 
   // Prizes
@@ -155,6 +147,7 @@ body{
       //border: $backgro;
       color: $background;
     }
+    &:focus{ border-color: darken($border, 10%); }
   }
 
   // Round
