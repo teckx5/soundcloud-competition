@@ -4,20 +4,20 @@
 
 jQuery ->
 
-  $('.vote a').click ->
-
-    if $(@).hasClass('voted') == false
-
-      vote = $(@).hasClass('vote_for')
-
-      $.ajax
-        type: 'post'
-        url: '/votes.json'
-        data:
-          vote: track_id: track_id, vote: vote
-        success: (data) ->
-          $('.votes a').removeClass 'voted'
-          if data then $(".vote_for").addClass('voted') else $(".vote_against").addClass('voted')
-          $('.votes div').text "Voted"
-        error: (data) ->
-          # console.log data
+  # $('.vote a').click ->
+  #
+  #   if $(@).hasClass('voted') == false
+  #
+  #     vote = $(@).hasClass('vote_for')
+  #
+  #     $.ajax
+  #       type: 'post'
+  #       url: '/votes.json'
+  #       data:
+  #         vote: track_id: track_id, vote: vote
+  #       success: (data) ->
+  #         $('.votes a').removeClass 'voted'
+  #         if data then $(".vote_for").addClass('voted') else $(".vote_against").addClass('voted')
+  #         $('.votes div').text "Voted"
+  #       error: (data) ->
+  #         # console.log data

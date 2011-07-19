@@ -104,6 +104,27 @@ jQuery ->
       url: $that.attr "href"
       success: () ->
         if $that.hasClass "selected" then $that.removeClass "selected" else $that.addClass "selected"
+      error: () ->
+        # error
+    return false
+
+  ## Voting
+
+  $('.vote a').click ->
+    $('.votes div').text "Voting"
+    if $(@).hasClass('voted') == false
+      vote = $(@).hasClass('vote_for')
+      $.ajax
+        type: 'post'
+        url: '/votes.json'
+        data:
+          vote: track_id: $('.player').data().id, vote: vote
+        success: (data) ->
+          $('.votes a').removeClass 'voted'
+          if data then $(".vote_for").addClass('voted') else $(".vote_against").addClass('voted')
+          $('.votes div').text "Voted"
+        error: (data) ->
+          # error
     return false
 
   # Functions
