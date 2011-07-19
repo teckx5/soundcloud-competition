@@ -3,29 +3,14 @@ class TracksController < ApplicationController
   def index
     @latest_tracks = Track.all(:limit => 3, :order => "created_at DESC")
     @top_tracks = Track.rank_tally({:limit => 3})
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tracks }
-    end
   end
 
   def show
     @track = Track.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @track }
-    end
   end
 
   def new
     @track = Track.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @track }
-    end
   end
 
   def create

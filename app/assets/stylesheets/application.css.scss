@@ -163,7 +163,10 @@ body{
   @media only screen and (max-width: 767px){
     .header ul:first-child{ margin-left: 35px; }
     .holder{ height: 75px; }
-    .player{ @include player-sizing(75px); margin: 0; }
+    .holder .player{
+      @include player-sizing(75px);
+      margin: 0;
+    }
     .caption, .status, .stats{ display: none; }
   }
 
