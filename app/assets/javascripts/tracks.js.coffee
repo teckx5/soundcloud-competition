@@ -111,7 +111,7 @@ jQuery ->
 
   ## Voting
 
-  $('.vote a').click ->
+  $('.vote_for, .vote_against').click ->
     $('.votes div').text "Voting"
     if $(@).hasClass('voted') == false
       vote = $(@).hasClass('vote_for')
