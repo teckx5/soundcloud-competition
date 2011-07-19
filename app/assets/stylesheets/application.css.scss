@@ -100,9 +100,7 @@ body{
 
   // Player
 
-  .holder{
-    height: 100px;
-  }
+  .holder{ height: 100px; }
 
   .player{
     @include player-sizing(100px);
@@ -142,25 +140,24 @@ body{
   .reminder{
     display: none;
     &.sticky{ border: none; position: fixed; top: 0px; }
-    //.player{ @include player-sizing(75px); margin-bottom: 10px; }
   }
 
-  .about, .reminder{
-    .player{ @include player-sizing(75px); margin-bottom: 10px; }
-  }
+  .about, .reminder{ .player{ @include player-sizing(75px); margin-bottom: 10px; } }
 
   // Buttons
 
   .button{
     cursor: pointer;
     display: inline-block;
+    margin: 0 0 5px 0;
     padding: 5px 10px;
   }
 
   // Mobile Devices
 
   @media only screen and (max-width: 767px){
-    .player{ @include player-sizing(75px); }
+    .holder{ height: 75px; }
+    .player{ @include player-sizing(75px); margin: 0; }
     .caption, .status, .stats{ display: none; }
   }
 
