@@ -30,17 +30,19 @@
     %p Pete & Tom.
     %p= link_to "Download Stems", "http://soundcloud.com/wearedevolution/devolution-bad-love-vocal-stem/download", :class => "button"
 
-%hr.large
+- if !@latest_tracks.empty?
 
-.row.clearfix
+  %hr.large
 
-  .eight.columns
-    %h2 Top Tracks
-    .tracks= render @top_tracks
+  .row.clearfix
 
-  .eight.columns
-    %h2 Latest Tracks
-    .tracks= render @latest_tracks
+    .eight.columns
+      %h2 Top Tracks
+      .tracks= render @top_tracks
+
+    .eight.columns
+      %h2 Latest Tracks
+      .tracks= render @latest_tracks
 
 .row.clearfix
 
