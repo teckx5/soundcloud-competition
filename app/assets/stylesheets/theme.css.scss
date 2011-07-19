@@ -150,6 +150,11 @@ body{
     color: $text;
     &:hover{ color: $primary; }
     &.selected{ background: $border; color: $background; }
+    &.invert{
+      background: $primary;
+      //border: $backgro;
+      color: $background;
+    }
   }
 
   // Round
