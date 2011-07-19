@@ -1,9 +1,10 @@
-.player{:data => {:track_id => track_id}}
-  .controls
-    %a.control
-    .play
-    .pause
-  .time
-    .loaded
-    .played
-    %img.waveform
+%script#playerTemplate(type="text/x-jquery-tmpl")
+  .player
+    .controls
+      %a.control
+      .play
+      .pause
+    .time
+      .loaded
+      .played
+      %img.waveform

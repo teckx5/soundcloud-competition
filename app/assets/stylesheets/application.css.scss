@@ -102,7 +102,7 @@ body{
 
   .holder{ height: 100px; }
 
-  .player{
+  div.player{
     @include player-sizing(100px);
 
     & > div{ cursor: pointer; position: relative; *{ position: absolute; } }

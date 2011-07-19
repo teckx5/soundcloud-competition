@@ -34,9 +34,13 @@ jQuery ->
   soundManager.onready ->
 
     loadPlayer = (node) ->
-      $player = $(node)
 
-      $.getJSON "http://api.soundcloud.com/tracks/#{$player.data("track_id")}?format=json&consumer_key=#{key}&callback=?", (track) ->
+      track_id = $(node).attr "href"
+
+      $player = $("#playerTemplate").tmpl()
+      $(node).replaceWith $player
+
+      $.getJSON "http://api.soundcloud.com/tracks/#{track_id}?format=json&consumer_key=#{key}&callback=?", (track) ->
 
         $player.data(track)
         $player.find('.waveform').attr(src: track.waveform_url).fadeIn("slow")
@@ -57,7 +61,16 @@ jQuery ->
         if $('.favorite').length then loadFavorite()
         if $('.reminder').length then showReminder()
 
-    loadPlayers = () -> $('.player').each -> loadPlayer @
+    loadPlayers = () ->
+
+      $('.player').each -> loadPlayer @
+
+      $('.controls').click ->
+        $player = $(@).closest ".player"
+        $player.toggleClass "playing"
+        soundManager.togglePause "track_#{$player.data().id}"
+
+      $('.time').click (event) -> seekTrack(this, event)
 
     loadPlayers()
 
@@ -67,15 +80,6 @@ jQuery ->
       $("#statsTemplate").tmpl(track).appendTo('.stats ul')
 
   # GUI Events
-
-  ## Player
-
-  $('.controls').click ->
-    $player = $(@).closest('.player')
-    $player.toggleClass "playing"
-    soundManager.togglePause "track_#{$player.data().id}"
-
-  $('.time').click (event) -> seekTrack(this, event)
 
   ## Comments
 

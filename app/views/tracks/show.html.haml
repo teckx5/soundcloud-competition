@@ -20,7 +20,7 @@
 .row.clearfix.half-bottom
   .sixteen.columns
     .holder
-      = render :partial => "player", :locals => {:track_id => @track.tid}
+      %a.player{:href => @track.tid}
 
 // Favorite & Navigate
 
@@ -79,9 +79,9 @@
 
     %p
       %a.button(href="http://twitter.com/share" target="_blank") Twitter
-      %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{track_url(@track)}" target="_blank") Facebook
-      /%a.button(href="http://www.tumblr.com/share/audio?externally_hosted_url=#{track_url(@track)}") Tumblr
-      %a.button(href="mailto:?subject=#{@track.title}&body=#{track_url(@track)}") Email
+      %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{track_url}" target="_blank") Facebook
+      %a.button(href="http://www.tumblr.com/share/link?url=#{CGI.escape(track_url)}&name=#{@track.title}&description=" target="_blank") Tumblr
+      %a.button(href="mailto:?subject=#{@track.title}&body=#{track_url}") Email
 
     %hr.large
 
@@ -97,6 +97,7 @@
       %h3 Leave a Comment
       = render :partial => "comments/form"
 
+= render "player"
 = render "about"
 = render "stats"
 = render "comments/comment"

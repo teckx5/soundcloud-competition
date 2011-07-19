@@ -20,11 +20,11 @@
       %p
         %a.button(href="http://twitter.com/share" target="_blank") Twitter
         %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{root_url}" target="_blank") Facebook
-        /%a.button(href="#" target="_blank") Tumblr
+        %a.button(href="http://www.tumblr.com/share/link?url=#{CGI.escape(root_url)}&name=DEVolution Remix Competition&description=" target="_blank") Tumblr
 
   .about.two-thirds.column
     %h2 About Competition
-    = render :partial => "player", :locals => {:track_id => "19340009"}
+    %a.player(href=19340009)
     %p Now, we've had an idea. We all need a bit of Good Love in our lives (hence why we made a record about it), but how many of you want want some real Bad Love in your lives?
     %p We certainly do. And we mean BAD! Interpret that how you will, and whilst you are thinking about it download the special Bad Love acapella and then get to work. Do your worst; your absolute worst with it. Grimy, filthy, stinking beats coupled with the most abominable, nasty, twisted, booming bassline you can figure out. The winner takes all so this is no place for the faint hearted, and people who do not Embrace The Bass most definitely need NOT apply.
     %p Pete & Tom.
@@ -66,3 +66,5 @@
       /%a.button(href="http://twitter.com/wearedevolution" target="_blank") Twitter
       %a.button(href="http://wearedevolution.com/freedownload/" target="_blank") Free Download
       %a.button(href="http://youtube.com/wearedevolution" target="_blank") YouTube
+
+= render "player"
