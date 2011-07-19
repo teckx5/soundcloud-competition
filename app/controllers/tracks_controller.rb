@@ -30,6 +30,7 @@ class TracksController < ApplicationController
 
   def create
     track = MultiJson.decode(current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json").body)
+    current_user.soundcloud.put("/groups/33135/contributions/#{params[:track][:tid]}")
     @track = current_user.tracks.identify_or_create_from_soundcloud(track)
     redirect_to @track
   end
