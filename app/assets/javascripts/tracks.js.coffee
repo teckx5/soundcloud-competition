@@ -51,6 +51,7 @@ jQuery ->
           whileplaying: -> $player.find('.played').css width: (@position / track.duration * 100) + '%'
           onplay:       -> $player.find('.loaded').css width: '100%' if @loaded
           onstop:       -> $player.find('.time div').width 0
+          onfinish:     -> $player.removeClass('playing')
 
         if $('.comments').length then loadComments(track.id)
         if $('.favorite').length then loadFavorite()
