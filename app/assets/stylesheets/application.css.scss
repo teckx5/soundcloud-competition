@@ -47,9 +47,9 @@ body{
   // Header & Caption
 
   .header, .footer{
-    padding: 10px 0;
     ul{
       list-style: none;
+      padding: 10px 0;
       &:first-child{ float: left; }
       &:last-child{ float: right; }
       li{
@@ -60,7 +60,16 @@ body{
     }
   }
 
-  .header ul:first-child{ margin-left: 25px; }
+  .header{
+    margin-bottom: 30px;
+    .nav{ margin-left: 35px; }
+    .logo{
+      height: 35px;
+      position: absolute;
+      top: 0px;
+      width: 35px;
+    }
+  }
 
   .caption div{ padding: 5px 20px 5px 20px; }
 
@@ -105,7 +114,7 @@ body{
 
   // Player
 
-  .holder{ height: 100px; }
+  .holder{ height: $big-player; }
 
   div.player{
     @include player-sizing($big-player);
@@ -147,7 +156,7 @@ body{
     &.sticky{ border: none; position: fixed; top: 0px; }
   }
 
-  .about, .reminder{ .player{ @include player-sizing(75px); margin-bottom: 10px; } }
+  .about, .reminder{ .player{ @include player-sizing($small-player); margin-bottom: 10px; } }
 
   // Buttons
 
@@ -161,13 +170,14 @@ body{
   // Mobile Devices
 
   @media only screen and (max-width: 767px){
-    .header ul:first-child{ margin-left: 35px; }
-    .holder{ height: 75px; }
-    .holder .player{
-      @include player-sizing(75px);
-      margin: 0;
+    .holder{
+      height: $small-player;
+      .player{
+        @include player-sizing($small-player);
+        margin: 0;
+      }
     }
-    .caption, .status, .stats{ display: none; }
+    .caption, .status, .stats, .non-mobile{ display: none !important; }
   }
 
   // Misc

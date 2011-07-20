@@ -18,7 +18,9 @@
     = csrf_meta_tags
 
   %body
+
+    = render "header"
+
     .container
-      = render "header"
       = yield
       = render "footer"

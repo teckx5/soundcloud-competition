@@ -1,19 +1,14 @@
-$background: whitesmoke;
+$background: #FFFFFF;
 $border: #D3D3D3;
-$button: #ebebeb;
-$container: transparent;
+$button: #EBEBEB;
 $control: black;
 $header: black;
-$opaque: black; //whitesmoke;
-$primary: #000000; //#20B2AA;
+$opaque: black;
+$primary: black;
+$radius: 0px;
 $text: #555555;
 $thick: 3px;
 
-@mixin background-gradient($color){
-  background: $color;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to($color), color-stop(.4,lighten($color, 10%)), color-stop(.6,lighten($color, 10%)));
-  background: -moz-linear-gradient(top, $color, lighten($color, 10%) 40%, lighten($color, 10%) 60%, $color);
-}
 @mixin border-radius($size){
   border-radius: $size;
   -moz-border-radius: $size;
@@ -24,19 +19,19 @@ $thick: 3px;
   -webkit-box-shadow: inset 0 0 0 $size $color;
   box-shadow: inset 0 0 0 $size $color;
 }
-@mixin control-gradient($color, $direction: "normal"){
-  background: $color;
-  @if $direction == "normal" {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba($color, 0.8)), to(rgba($color, 0)));
-    background: -moz-linear-gradient(top, rgba($color, 0.8), rgba($color, 0) 100%);
-  } @else {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba($color, 0)), to(rgba($color, 0.8)));
-    background: -moz-linear-gradient(top, rgba($color, 0), rgba($color, 0.8) 100%);
-  }
+@mixin background-gradient($start-color, $end-color){
+  background: $start-color;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba($start-color, 1)), to(rgba($end-color, 1)));
+  background: -moz-linear-gradient(top, rgba($start-color, 1), rgba($end-color, 1) 100%);
 }
-@mixin transition(){
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
+@mixin transition($time){
+  -webkit-transition: $time all;
+  -moz-transition: $time all;
+}
+@mixin waveform-gradient($color){
+  background: $color;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to($color), color-stop(.4, lighten($color, 10%)), color-stop(.6, lighten($color, 10%)));
+  background: -moz-linear-gradient(top, $color, lighten($color, 10%) 40%, lighten($color, 10%) 60%, $color);
 }
 
 body{
@@ -47,47 +42,44 @@ body{
 
   // Main Styles
 
-  a{ color: $primary; text-decoration: none; &:hover{ color: lighten($primary, 5%); } }
+  a{ color: $primary; text-decoration: none; }
   h1, h2, h3, h4{ color: $header; font-weight: normal; }
-  hr{ border: solid transparentize($border, 0.7); border-width: 1px 0 0; &.large{ border-width: $thick 0 0; } }
+  hr{ border: solid transparentize($border, 0.5); border-width: 1px 0 0; &.large{ border-width: $thick 0 0; } }
   em{ color: $border; font-style: normal; }
-  textarea{
-    background: $background;
-    border: 1px solid transparentize($border, 0.7); &:focus{ border-color: $border; } }
-
-  // Container
-
-  .container{ background: $container; }
+  textarea{ background: transparent; border: 1px solid transparentize($border, 0.5); &:focus{ border-color: $border; } }
 
   // Tracks & Comments
 
   .track, .comment{
     & > div{
-      border-top: 1px solid transparentize($border, 0.7);
+      border-top: 1px solid transparentize($border, 0.5);
       h4{ color: $header; }
     }
   }
 
-  .about .comment{ border-bottom: 1px solid transparentize($border, 0.7); }
-  .owner{ background: transparentize($border, 0.9); }
+  .about .comment{ border-bottom: 1px solid transparentize($border, 0.5); }
+  .owner{ background: transparentize($border, 0.75); }
 
-  // Header & Caption
+  // Header , Footer, & Caption
 
-  .header, .footer{ li{ border-right: 1px solid $border; } }
-  .header{ background: $opaque; a{ color: $background; } }
-  .footer{ border-top: $thick solid $opaque; }
-
-  .caption{
-    background: $opaque;
-    &, h1{ color: $background; }
+  .header{
+    $color: lighten($opaque, 25%);
+    @include background-gradient($color, $opaque);
+    a{ color: $background; }
+    li, div{ border-right: 1px solid $color; }
+    div{ background: url('/assets/logo.png'); }
   }
+
+  .footer{
+    border-top: $thick solid $opaque;
+    li{ border-right: 1px solid $border; }
+  }
+
+  .caption{ background: $opaque; *{ color: $background; } }
 
   // Prizes
 
-  ul.prizes{
-    font-size: 14px;
-    list-style: square;
-  }
+  ul.prizes{ font-size: 14px; list-style: square; }
 
   // Voting
 
@@ -95,7 +87,7 @@ body{
     border: 1px solid $border;
     .votes > div{ color: $primary; }
     .votes > a{
-      @include control-gradient($button);
+      @include background-gradient($button, $background);
       border-left: 1px solid $border;
       color: $text;
       &:hover{ color: $primary; }
@@ -108,55 +100,41 @@ body{
   div.player{
     border: 1px solid $border;
     .controls{
-      //background: whitesmoke; //$opaque;
       a{
-        @include control-gradient($control);
+        @include background-gradient($control, $background);
         @include border-radius(100px);
         @include box-shadow($control, $thick);
       }
-      &:hover a{ @include control-gradient($control, "reverse"); }
       .play{ border-color: transparent transparent transparent $control; }
       .pause{ border-color: $control; }
     }
     .time{
-      background: $border;
       border-left: 1px solid $border;
-      .loaded{ @include background-gradient(#959595); }
-      .played{ @include background-gradient($primary); }
+      @include waveform-gradient(#D3D3D3);
+      .loaded{ @include waveform-gradient(#959595); }
+      .played{ @include waveform-gradient($primary); }
     }
   }
 
-  // Favoriting
-
-  //.favorited{ background: $border !important; color: $background !important; }
-
   // Reminder
 
-  .reminder{ border-top: 1px solid transparentize($border, 0.7); }
+  .reminder{ border-top: 1px solid transparentize($border, 0.5); }
 
   // Buttons
 
   .button{
-    @include control-gradient($button, "reverse");
+    @include background-gradient($background, $button);
     border: 1px solid $border;
     color: $text;
     &:hover{ color: $primary; }
     &.selected{ background: $border; color: $background; }
-    &.invert{
-      background: $primary;
-      //border: $backgro;
-      color: $background;
-    }
     &:focus{ border-color: darken($border, 10%); }
   }
 
-  // Round
+  // Rounding & Transition
 
-  textarea, .vote, .button{ @include border-radius(0px); }
-
-  // Transition
-
-  textarea, .votes > a, .button{ @include transition; }
+  textarea, .vote, .button{ @include border-radius($radius); }
+  textarea, .votes > a, .button{ @include transition(0.5s); }
 
   // Mobile Devices
 

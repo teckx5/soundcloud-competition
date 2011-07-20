@@ -175,7 +175,7 @@ jQuery ->
     $r = $('.reminder')
     $a = $('.about')
 
-    top = $p.position().top + $p.outerHeight()
+    top = $p.offset().top + $p.outerHeight()
 
     $(document).scroll ->
       if $(window).width() < 767

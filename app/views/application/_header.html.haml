@@ -1,9 +1,15 @@
-.header.row.clearfix
-  %div(style="height:26px;position:absolute;padding:4px 3px 5px 4px;top:0px;border-right:1px solid grey")
-    = link_to image_tag("competition.png"), root_path
-  .sixteen.columns
+.header.clearfix
+  .logo
+  .nav
     %ul
       %li= link_to "DEVolution Competition", root_path
     %ul
-      %li= link_to "Submit Track", submit_path
-      /%li= link_to "Score", Track.first
+      - if current_user
+        %li.non-mobile Hej, #{link_to(current_user.username, current_user.link, :target => "_blank")}
+        %li= link_to "Submit", submit_path
+        - if !Track.first.nil?
+          %li= link_to "Score", Track.first
+        %li.non-mobile= link_to "Log out", logout_path
+      - else
+        %li= link_to "Log in", login_path
+
