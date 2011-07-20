@@ -4,7 +4,9 @@
     %div
       %h1 Your Challenge
       %p Remix the Bad Love version of Good Love by DEVolution. Do your worst; your absolute worst with it. Grimy, filthy, stinking beats coupled with the most abominable, nasty, twisted, booming bassline you can figure out.
-      %p= link_to "Download Stems", "http://soundcloud.com/wearedevolution/devolution-bad-love-vocal-stem/download", :class => "button invert"
+      %p
+        = link_to "Get Stems", "http://soundcloud.com/wearedevolution/devolution-bad-love-vocal-stem/download", :class => "button"
+        = link_to "Submit Track", submit_path, :class => "button"
 
   .banner.two-thirds.column
     = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid"
