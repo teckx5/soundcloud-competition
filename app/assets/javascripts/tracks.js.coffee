@@ -78,6 +78,7 @@ jQuery ->
       $('.about .comment p').text track.description || ""
       $('.edit').attr href: track.permalink_url + "/edit"
       $("#statsTemplate").tmpl(track).appendTo('.stats ul')
+      $('.artwork').attr href: track.permalink_url
 
   # GUI Events
 

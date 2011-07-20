@@ -4,7 +4,7 @@
   .eleven.columns.half-bottom
     .info.clearfix
       %div
-        = image_tag @track.artwork_url || @track.user.avatar_url, :class => "scale-with-grid", :height => 100, :width => 100, :alt => @track.user.username
+        = link_to image_tag(@track.artwork_url || @track.user.avatar_url, :class => "scale-with-grid", :height => 100, :width => 100, :alt => @track.user.username), '#', :class => "artwork", :target => "_blank"
       %div
         %h1= @track.title
         %h2
