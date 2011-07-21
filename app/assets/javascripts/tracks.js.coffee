@@ -47,7 +47,7 @@ jQuery ->
         if $('.info').length then loadInfo(track)
 
         soundManager.createSound
-          autoLoad: true
+          autoLoad: false
           id: "track_#{track.id}"
           url: "https://api.soundcloud.com/tracks/#{track.id}/stream?consumer_key=#{key}"
           volume: 100
