@@ -12,7 +12,9 @@ jQuery ->
       window.scrollTo(0, 1)
     ,1000
 
-    $("a").click (event) ->
+    # temp fix for mobile hijack problem
+
+    $("a:not(.vote_for, .vote_against, .favorite)").click (event) ->
       event.preventDefault()
       window.location = $(this).attr("href")
 
