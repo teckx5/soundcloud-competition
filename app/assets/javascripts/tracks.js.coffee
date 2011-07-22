@@ -6,9 +6,15 @@ jQuery ->
 
   # mobile scroll jump
 
-  /mobile/i.test(navigator.userAgent) && setTimeout =>
-    window.scrollTo(0, 1)
-  ,1000
+  if /mobile/i.test(navigator.userAgent)
+
+    setTimeout =>
+      window.scrollTo(0, 1)
+    ,1000
+
+    $("a").click (event) ->
+      event.preventDefault()
+      window.location = $(this).attr("href")
 
   # soundManager
 
