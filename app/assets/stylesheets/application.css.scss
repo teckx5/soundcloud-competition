@@ -28,7 +28,13 @@ $small-player: 75px;
   .time{ margin-left: $size; }
 }
 
-*{ margin: 0; padding: 0; -webkit-text-size-adjust: none; outline-style: none; }
+*{
+  margin: 0;
+  outline-style: none;
+  padding: 0;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+}
 
 body{
 
