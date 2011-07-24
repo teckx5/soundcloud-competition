@@ -1,7 +1,7 @@
-.row.clearfix
+.row.clearfix.remove-top
 
   .two-thirds.column
-    %h1 Want to Compete? Here's How:
+    %h1(style="margin-top:0") Want to Compete? Here's How:
     %hr.large
 
     %div
@@ -26,7 +26,7 @@
       - else
         %p= link_to "Login to Submit", login_link, :class => "button"
 
-  .one-third.column
+  .one-third.column.non-mobile
 
     = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
 
