@@ -1,6 +1,5 @@
 %form.new_comment
   %input.comment_track_id(name="comment[track_id]" type="hidden"){:value => @track.tid}
-  %textarea.comment_body(name="comment[body]")
+  %textarea.comment_body(name="comment[body]" rows=6)
   %p
-    /= submit_tag "Post a Comment"
     %a.submit.button(href="#") Post a Comment
