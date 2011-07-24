@@ -49,7 +49,7 @@ body{
 
   // Forms
 
-  input, textarea{
+  input, textarea, select{
     background: transparent;
     border: 1px solid transparentize($border, 0.5);
     &:focus{ border-color: $border; }
@@ -86,7 +86,10 @@ body{
 
   // Prizes
 
-  .prizes ul{ font-size: 14px; list-style: square; }
+  .prizes ul{
+    font-size: 14px;
+    list-style: square;
+  }
 
   // Voting
 

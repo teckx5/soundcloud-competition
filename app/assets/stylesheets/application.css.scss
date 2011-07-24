@@ -49,14 +49,9 @@ body{
     label{ display: block; margin: 0 0 5px; }
   }
 
-  input, textarea{
+  input, textarea, select{
     padding: 1.5%;
     width: 97%;
-  }
-
-  textarea{
-    //height: 100px;
-
   }
 
   // Header & Caption

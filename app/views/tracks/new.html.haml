@@ -1,27 +1,22 @@
-.row.clearfix.remove-bottom
-
-  .sixteen.columns(style="text-align:center")
-    %h1 Want to Submit? Here's How:
-
 .row.clearfix
 
-  .twelve.columns.offset-by-two
-
-    %hr
+  .two-thirds.column
+    %h1 Want to Compete? Here's How:
+    %hr.large
 
     %div
       %h2 1. Sign up for SoundCloud
       %p SoundCloud is a platform that puts your sound at the heart of communities, websites and even apps. Watch conversations, connections and social experiences happen, with your sound as the spark.
       %p
         %a.button(href="http://soundcloud.com/signup" target="_blank") SoundCloud Sign-up
-    %br
+    %hr
 
     %div
       %h2 2. Upload your Track to SoundCloud
       %p Upload your track to your SoundCloud account so it's available to submit once you login here. Be sure to include an artwork image and description.
       %p
         %a.button(href="http://soundcloud.com/upload" target="_blank") Upload your Track
-    %br
+    %hr
 
     %div
       %h2 3. Submit Your Track
@@ -30,3 +25,17 @@
         = render "form"
       - else
         %p= link_to "Login to Submit", login_link, :class => "button"
+
+  .one-third.column
+
+    = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
+
+    %h2 Your Challenge
+    = markdown @competition.intro
+
+    %hr
+
+    .prizes
+      %h2 Prizes
+      = markdown @competition.prizes
+

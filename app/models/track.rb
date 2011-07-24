@@ -10,7 +10,8 @@ class Track < ActiveRecord::Base
       :permalink => data["permalink"],
       :artwork_url => data["artwork_url"],
       :waveform_url => data["waveform_url"],
-      :secret_token => data["secret_token"]
+      :secret_token => data["secret_token"],
+      :competition_id => 1
     }
 
     if track = Track.find_by_tid(track_info[:tid])

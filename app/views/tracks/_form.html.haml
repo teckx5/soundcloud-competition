@@ -7,10 +7,10 @@
       - @track.errors.full_messages.each do |msg|
         %li= msg
 
-  = f.hidden_field :competition_id
+  /= f.hidden_field :competition_id
 
   .field
-    = f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}
+    = f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}, {:prompt => 'Select a Track...'}
 
   .actions
     = link_to "Submit Track", "#", :class => "button submit"
