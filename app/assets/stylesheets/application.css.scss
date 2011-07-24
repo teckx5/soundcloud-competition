@@ -49,10 +49,12 @@ body{
     label{ display: block; margin: 0 0 5px; }
   }
 
-  input, textarea, select{
+  input, textarea{
     padding: 1.5%;
     width: 97%;
   }
+
+  select{ padding: 5px; }
 
   // Header & Caption
 
