@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    redirect_to root_path if !current_user
+    redirect_to login_path + "?return_to=" + request.env['PATH_INFO'] if !current_user
   end
 end

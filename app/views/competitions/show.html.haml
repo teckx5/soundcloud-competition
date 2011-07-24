@@ -1,0 +1,58 @@
+.row.clearfix.one-third.half-bottom
+
+  .caption.one-third.column
+    %div
+      %h1 Your Challenge
+      = markdown @competition.intro
+      %p
+        = link_to "Get Stems", "http://soundcloud.com/wearedevolution/devolution-bad-love-vocal-stem/download", :class => "button"
+        = link_to "Submit Track", submit_path, :class => "button"
+
+  .banner.two-thirds.column
+    = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
+
+.row.clearfix
+
+  .status.one-third.column
+    %div
+      %h2 Competition Status
+      %p #{distance_of_time_in_words(@competition.end_date, Time.now)} left to submit
+      %h3 Submit From
+      %p #{@competition.start_date.strftime("%B %e")} > #{@competition.end_date.strftime("%B %e, %Y")}
+      %h3 Share this Competition
+      %p
+        %a.button(href="http://twitter.com/share" target="_blank") Twitter
+        %a.button(href="http://www.facebook.com/sharer/sharer.php?u=#{root_url}" target="_blank") Facebook
+        %a.button(href="http://www.tumblr.com/share/link?url=#{CGI.escape(root_url)}&name=#{@competition.host} #{@competition.title}&description=#{CGI.escape(@competition.intro)}" target="_blank") Tumblr
+
+  .about.two-thirds.column
+    %h2 About Competition
+    = markdown @competition.description
+
+- if !@competition.latest_tracks.empty?
+
+  %hr.large
+
+  .row.clearfix
+
+    .eight.columns
+      %h2 Top Tracks
+      .tracks= render @competition.top_tracks
+
+    .eight.columns
+      %h2 Latest Tracks
+      .tracks= render @competition.latest_tracks
+
+.row.clearfix
+
+  .prizes.eight.columns
+    %hr.large
+    %h2 Prizes
+    = markdown @competition.prizes
+
+  .eight.columns
+    %hr.large
+    %h2= @competition.host
+    = markdown @competition.about
+
+= render "player"

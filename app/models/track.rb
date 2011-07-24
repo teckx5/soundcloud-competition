@@ -1,6 +1,7 @@
 class Track < ActiveRecord::Base
   acts_as_voteable
   belongs_to :user
+  belongs_to :competition, :counter_cache => true
 
   def self.identify_or_create_from_soundcloud(data)
     track_info = {

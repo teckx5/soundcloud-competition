@@ -1,8 +1,9 @@
 class TracksController < ApplicationController
 
+  before_filter :load_competition, :only => [:index, :show, :new]
+
   def index
-    @latest_tracks = Track.all(:limit => 3, :order => "created_at DESC")
-    @top_tracks = Track.rank_tally({:limit => 3})
+    @tracks = Track.all
   end
 
   def show
@@ -10,7 +11,7 @@ class TracksController < ApplicationController
   end
 
   def new
-    @track = Track.new
+    @track = @competition.tracks.new
   end
 
   def create
@@ -34,18 +35,13 @@ class TracksController < ApplicationController
     render :json => res
   end
 
-=begin
-
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-
-    respond_to do |format|
-      format.html { redirect_to tracks_url }
-      format.json { head :ok }
-    end
+    redirect_to root_path
   end
 
-=end
-
+  def load_competition
+    @competition = Competition.first
+  end
 end

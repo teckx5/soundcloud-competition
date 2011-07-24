@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-SoundcloudSubmit::Application.load_tasks
+SoundCloudCompetition::Application.load_tasks

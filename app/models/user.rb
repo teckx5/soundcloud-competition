@@ -36,4 +36,8 @@ class User < ActiveRecord::Base
   def link
     "http://soundcloud.com/#{permalink}"
   end
+
+  def is_admin?(competition)
+    competition.user.nil? || competition.user == self
+  end
 end

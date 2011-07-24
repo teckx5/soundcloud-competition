@@ -90,6 +90,14 @@ jQuery ->
 
   # GUI Events
 
+  ## Edit Form
+
+  $('.edit_competition .submit').click ->
+    $('.edit_competition').submit()
+
+  $('.new_track .submit').click ->
+    $('.new_track').submit()
+
   ## Comments
 
   $('.add_comment').click ->

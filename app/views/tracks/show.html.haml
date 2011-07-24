@@ -29,6 +29,7 @@
       - if current_user
         = link_to "Favorite", favorite_track_path(@track), :class => "button favorite"
         = link_to("Edit", "#", :class => "button edit") if current_user == @track.user
+        = link_to("Remove", @track, confirm: 'Are you sure?', method: :delete, :class => "button") if current_user.is_admin?(@track.competition)
       - else
         = link_to "Login to Favorite", login_link, :class => "button"
     .fr

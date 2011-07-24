@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'omniauth'
 gem 'thumbs_up'
+gem 'redcarpet'
 
 group :test do
   gem 'turn', :require => false

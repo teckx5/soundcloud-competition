@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110714171332) do
+ActiveRecord::Schema.define(:version => 20110724062800) do
+
+  create_table "competitions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "host"
+    t.string   "title"
+    t.text     "intro"
+    t.text     "description"
+    t.text     "prizes"
+    t.text     "about"
+    t.string   "group"
+    t.string   "key"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tracks_count", :default => 0
+  end
 
   create_table "tracks", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20110714171332) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "secret_token"
+    t.integer  "competition_id"
   end
 
   create_table "users", :force => true do |t|

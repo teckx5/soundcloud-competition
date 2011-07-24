@@ -38,10 +38,19 @@ body{
   h1, h2, h3, h4{ @include ellipsis; }
   hr{ clear: both; height: 0; }
 
-  textarea{
-    height: 100px;
+  form{
+    .field, .actions{ margin: 10px 0; }
+    label{ display: block; margin: 0 0 5px; }
+  }
+
+  input, textarea{
     padding: 1.5%;
     width: 97%;
+  }
+
+  textarea{
+    //height: 100px;
+
   }
 
   // Header & Caption
@@ -75,7 +84,7 @@ body{
 
   // Prizes
 
-  ul.prizes{
+  .prizes ul{
     margin-left: 18px;
     li{ margin-bottom: 10px; }
   }

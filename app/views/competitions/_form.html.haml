@@ -1,0 +1,51 @@
+= form_for @competition do |f|
+
+  - if @competition.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@competition.errors.count, "error")} prohibited this competition from being saved:
+      %ul
+      - @competition.errors.full_messages.each do |msg|
+        %li= msg
+
+  .field
+    = f.label :host
+    = f.text_field :host
+
+  .field
+    = f.label :title
+    = f.text_field :title
+
+  .field
+    = f.label :intro
+    = f.text_area :intro, :rows => 5
+
+  .field
+    = f.label :description
+    = f.text_area :description, :rows => 10
+
+  .field
+    = f.label :prizes
+    = f.text_area :prizes, :rows => 5
+
+  .field
+    = f.label :about
+    = f.text_area :about, :rows => 10
+
+  .field
+    = f.label :group
+    = f.text_field :group
+
+  .field
+    = f.label :key
+    = f.text_field :key
+
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+
+  .actions
+    %a.button.submit Update

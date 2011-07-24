@@ -7,5 +7,10 @@
       - @track.errors.full_messages.each do |msg|
         %li= msg
 
-  %p= f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}
-  %p= f.submit "Submit"
+  = f.hidden_field :competition_id
+
+  .field
+    = f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}
+
+  .actions
+    = link_to "Submit Track", "#", :class => "button submit"

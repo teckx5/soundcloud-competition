@@ -46,7 +46,14 @@ body{
   h1, h2, h3, h4{ color: $header; font-weight: normal; }
   hr{ border: solid transparentize($border, 0.5); border-width: 1px 0 0; &.large{ border-width: $thick 0 0; } }
   em{ color: $border; font-style: normal; }
-  textarea{ background: transparent; border: 1px solid transparentize($border, 0.5); &:focus{ border-color: $border; } }
+
+  // Forms
+
+  input, textarea{
+    background: transparent;
+    border: 1px solid transparentize($border, 0.5);
+    &:focus{ border-color: $border; }
+  }
 
   // Tracks & Comments
 
@@ -79,7 +86,7 @@ body{
 
   // Prizes
 
-  ul.prizes{ font-size: 14px; list-style: square; }
+  .prizes ul{ font-size: 14px; list-style: square; }
 
   // Voting
 
@@ -134,7 +141,7 @@ body{
   // Rounding & Transition
 
   textarea, .vote, .button{ @include border-radius($radius); }
-  textarea, .votes > a, .button{ @include transition(0.5s); }
+  input, textarea, .votes > a, .button{ @include transition(0.5s); }
 
   // Mobile Devices
 

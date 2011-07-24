@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title DEVolution | 'Bad Love' Remix Competition
+    %title #{@competition.host} / #{@competition.title}
 
     %link(rel="shortcut icon" href="/assets/favicon.png")
     %link(rel="apple-touch-icon" href="/assets/apple-touch-icon.png")
@@ -11,12 +11,12 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     %meta(name="apple-mobile-web-app-capable" content="yes")
     %meta(name="apple-mobile-web-app-status-bar-style" content="black")
-    %meta(property="og:title" content="Bad Love Remix Competition")
-    %meta(property="og:description" content='Remix the Bad Love version of Good Love by DEVolution. Do your worst; your absolute worst with it. Grimy, filthy, stinking beats coupled with the most abominable, nasty, twisted, booming bassline you can figure out. The winner gets £500, a release on OMT/Warner Bros. Records and a Soundcloud Pro account.')
+    %meta(property="og:title" content="#{@competition.title}")
+    %meta(property="og:description" content="#{@competition.intro}")
     %meta(property="og:type" content="website")
     %meta(property="og:image" content="#{root_url}assets/artwork.jpg")
     %meta(property="og:url" content=root_url)
-    %meta(property="og:site_name" content="DEVolution")
+    %meta(property="og:site_name" content="#{@competition.host}")
 
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
