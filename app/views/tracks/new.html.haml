@@ -4,17 +4,18 @@
 
     = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
 
+    %h2 Your Challenge
     = markdown @competition.intro
     %p= link_to "Get Stems", @competition.download, :class => "button" if @competition.download
 
-    %hr
+    %hr.large
 
     .prizes
       %h2 Prizes
       = markdown @competition.prizes
 
   .two-thirds.column
-    %h1.remove-top Want to Compete? Here's How:
+    %h1.remove-top Want to Compete? Here's How.
     %hr.large
 
     %div
