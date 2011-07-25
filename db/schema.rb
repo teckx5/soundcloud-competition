@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(:version => 20110725020002) do
     t.text     "description"
     t.text     "prizes"
     t.text     "about"
-    t.integer  "group",        :limit => 255
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tracks_count",                :default => 0
+    t.integer  "tracks_count", :default => 0
     t.string   "rules"
     t.string   "download"
+    t.integer  "group"
   end
 
   create_table "tracks", :force => true do |t|
