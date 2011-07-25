@@ -1,1 +1,9 @@
-%h1 Tracks#Index
+.row
+  .sixteen.columns
+    %h1 Score Tracks
+
+    - for track in @tracks
+      /%a.player{:href => track.tid}
+      = render track
+
+= render "player"
