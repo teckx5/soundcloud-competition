@@ -132,7 +132,7 @@ body{
 
   // Buttons
 
-  .button{
+  .button, .pagination a{
     @include background-gradient($background, $button);
     border: 1px solid $border;
     color: $text;

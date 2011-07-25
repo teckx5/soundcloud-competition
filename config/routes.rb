@@ -1,6 +1,10 @@
 SoundCloudCompetition::Application.routes.draw do
 
-  resources :competitions, :tracks
+  resources :competitions
+
+  resources :tracks do
+    get '/page/:page', :action => :index, :on => :collection
+  end
 
   match "/admin" => 'competitions#edit', :id => 1, :as => :admin
 

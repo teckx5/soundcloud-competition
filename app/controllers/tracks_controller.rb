@@ -3,7 +3,7 @@ class TracksController < ApplicationController
   before_filter :load_competition, :except => [:favorite]
 
   def index
-    @tracks = Track.all(:order => "created_at DESC")
+    @tracks = Track.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def show

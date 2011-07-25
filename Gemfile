@@ -10,6 +10,7 @@ gem 'omniauth'
 gem 'thumbs_up'
 gem 'redcarpet'
 gem 'rails_config'
+gem 'kaminari'
 
 group :test do
   gem 'turn', :require => false
