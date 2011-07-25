@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
   end
 
   def soundcloud_tracks
-    MultiJson.decode(soundcloud.get('/me/tracks.json').body)
+    tracks = MultiJson.decode(soundcloud.get('/me/tracks.json').body)
+    tracks.delete_if {|t| t["sharing"] != "public" }
   end
 
   def soundcloud_groups
