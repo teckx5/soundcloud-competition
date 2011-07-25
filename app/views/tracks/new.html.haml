@@ -1,7 +1,20 @@
-.row.clearfix.remove-top
+.row.clearfix
+
+  .one-third.column.non-mobile
+
+    = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
+
+    = markdown @competition.intro
+    %p= link_to "Get Stems", @competition.download, :class => "button" if @competition.download
+
+    %hr
+
+    .prizes
+      %h2 Prizes
+      = markdown @competition.prizes
 
   .two-thirds.column
-    %h1(style="margin-top:0") Want to Compete? Here's How:
+    %h1.remove-top Want to Compete? Here's How:
     %hr.large
 
     %div
@@ -26,16 +39,5 @@
       - else
         %p= link_to "Login to Submit", login_link, :class => "button"
 
-  .one-third.column.non-mobile
 
-    = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
-
-    %h2 Your Challenge
-    = markdown @competition.intro
-
-    %hr
-
-    .prizes
-      %h2 Prizes
-      = markdown @competition.prizes
 
