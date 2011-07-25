@@ -40,6 +40,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.1)
+    dalli (1.0.5)
     erubis (2.7.0)
     execjs (1.2.0)
       multi_json (~> 1.0)
@@ -57,8 +58,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    memcache-client (1.8.5)
-    memcached-northscale (0.19.5.4)
     mime-types (1.16)
     multi_json (1.0.3)
     multi_xml (0.2.2)
@@ -172,10 +171,9 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
+  dalli
   haml
   jquery-rails
-  memcache-client
-  memcached-northscale
   omniauth
   pg
   rails (= 3.1.0.rc4)
