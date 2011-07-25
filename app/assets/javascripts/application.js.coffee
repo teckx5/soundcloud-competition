@@ -1,9 +1,5 @@
 jQuery ->
 
-  # consumer key
-
-  key = "J8aFr3h5xyOSkYxsJMYXQ"
-
   # mobile scroll jump
 
   if /mobile/i.test(navigator.userAgent)

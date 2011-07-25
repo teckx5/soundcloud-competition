@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def soundcloud
-    consumer = OAuth::Consumer.new('J8aFr3h5xyOSkYxsJMYXQ', 'cCysasMDFSo8ErnCaAJQzpl8LUrkoziAVSTvzOhJWc', {:site => "https://api.soundcloud.com"})
+    consumer = OAuth::Consumer.new(Settings.key, Settings.secret, {:site => "https://api.soundcloud.com"})
     OAuth::AccessToken.new(consumer, token, secret)
   end
 

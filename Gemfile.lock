@@ -123,6 +123,8 @@ GEM
       activesupport (= 3.1.0.rc4)
       bundler (~> 1.0)
       railties (= 3.1.0.rc4)
+    rails_config (0.2.4)
+      activesupport (>= 3.0)
     railties (3.1.0.rc4)
       actionpack (= 3.1.0.rc4)
       activesupport (= 3.1.0.rc4)
@@ -173,6 +175,7 @@ DEPENDENCIES
   omniauth
   pg
   rails (= 3.1.0.rc4)
+  rails_config
   redcarpet
   sass-rails (~> 3.1.0.rc)
   sqlite3

@@ -9,6 +9,7 @@ gem 'haml'
 gem 'omniauth'
 gem 'thumbs_up'
 gem 'redcarpet'
+gem 'rails_config'
 
 group :test do
   gem 'turn', :require => false

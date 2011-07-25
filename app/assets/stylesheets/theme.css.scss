@@ -2,7 +2,7 @@ $background: #FFFFFF;
 $border: #D3D3D3;
 $button: #EBEBEB;
 $control: black;
-$header: black;
+$headers: black;
 $opaque: black;
 $primary: black;
 $radius: 0px;
@@ -43,7 +43,7 @@ body{
   // Main Styles
 
   a{ color: $primary; text-decoration: none; }
-  h1, h2, h3, h4{ color: $header; font-weight: normal; }
+  h1, h2, h3, h4{ color: $headers; font-weight: normal; }
   hr{ border: solid transparentize($border, 0.5); border-width: 1px 0 0; &.large{ border-width: $thick 0 0; } }
   em{ color: $border; font-style: normal; }
 
@@ -57,29 +57,29 @@ body{
 
   // Tracks & Comments
 
-  .track, .comment{
-    & > div{
-      border-top: 1px solid transparentize($border, 0.5);
-      h4{ color: $header; }
-    }
-  }
-
+  .track, .comment{ & > div{ border-top: 1px solid transparentize($border, 0.5); } }
   .about .comment{ border-bottom: 1px solid transparentize($border, 0.5); }
   .owner{ background: transparentize($border, 0.75); }
 
   // Header , Footer, & Caption
 
+  .header, .footer{
+    ul li{ border-style: solid; }
+    ul:first-child li{ border-width: 0 1px 0 0; &:last-child{ border: none; } }
+    ul:last-child li{ border-width: 0 0 0 1px; &:first-child{ border: none; } }
+  }
+
   .header{
     $color: lighten($opaque, 25%);
     @include background-gradient($color, $opaque);
     a{ color: $background; }
-    li, div{ border-right: 1px solid $color; }
-    div{ background: url('/assets/logo.png'); }
+    li{ border-color: $color; }
+    div.logo{ background: url('/assets/logo.png'); border-right: 1px solid $color; }
   }
 
   .footer{
     border-top: $thick solid $opaque;
-    li{ border-right: 1px solid $border; }
+    li{ border-color: $border; }
   }
 
   .caption{ background: $opaque; *{ color: $background; } }
