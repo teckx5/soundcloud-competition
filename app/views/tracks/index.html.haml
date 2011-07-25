@@ -1,20 +1,5 @@
 .row
   .sixteen.columns
-
-    %h1 Score Tracks
-
-    %div#tracks
-
-      - for track in @tracks
-
-        %div(style="border-top:1px solid whitesmoke;padding:5px")
-
-          .clearfix(style="margin:0")
-
-            %div.fl= link_to image_tag(track.artwork_url || track.user.avatar_url, :class => "scale-with-grid", :height => 52, :width => 52, :alt => track.user.username), track
-
-            %div(style="margin-left:60px;padding-top:5px")
-              %h3(style="margin:0 0 0 0")= link_to track.title, track
-              %p(style="margin:0")= link_to track.user.username, track.user.link, :target => "_blank"
-
-= render "player"
+    %h1.remove-top Score Tracks
+    %div.tracks
+      = render @tracks

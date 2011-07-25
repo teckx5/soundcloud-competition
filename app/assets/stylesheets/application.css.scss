@@ -85,21 +85,22 @@ body{
 
   .track, .comment, .info{
     & > div{
-      //padding: 2%;
       padding: 10px;
-      &:first-child{
-        float: left;
-        width: 15%;
-      }
-      &:last-child{ margin-left: 17%; }
+      &:first-child{ float: left; }
       p{ margin: 5px 0; overflow: hidden; }
+      h1, h2, h3{ margin: 0; }
     }
   }
 
-  .info{ h1, h2{ margin: 0; } div{ padding: 0; } }
+  .track, .comment{
+    & > div:first-child{ width: 50px; }
+    & > div:last-child{ margin-left: 60px; }
+  }
 
-  #tracks .player{
-    @include player-sizing(60px);
+  .info{
+    & > div:first-child{ width: 15%; }
+    & > div:last-child{ margin-left: 17%; }
+    div{ padding: 0; }
   }
 
   // Voting

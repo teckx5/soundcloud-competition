@@ -57,13 +57,9 @@ body{
 
   // Tracks & Comments
 
-  .track, .comment{ & > div{ border-top: 1px solid transparentize($border, 0.5); } }
+  .track, .comment{ border-top: 1px solid transparentize($border, 0.5); }
   .about .comment{ border-bottom: 1px solid transparentize($border, 0.5); }
   .owner{ background: transparentize($border, 0.75); }
-
-  #tracks .player{
-
-  }
 
   // Header , Footer, & Caption
 
