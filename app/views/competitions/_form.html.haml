@@ -19,7 +19,6 @@
     .fl(style="width:50%")
       = f.label :start_date
       = f.date_select :start_date
-
     .fr(style="width:50%")
       = f.label :end_date
       = f.date_select :end_date
@@ -41,12 +40,16 @@
     = f.text_area :about, :rows => 10
 
   %p
-    = f.label :group
+    = f.label :group, "Group URL"
     = f.text_field :group
 
   %p
-    = f.label :key
-    = f.text_field :key
+    = f.label :download, "Stems Download URL"
+    = f.text_field :download
+
+  %p
+    = f.label :rules, "Rules URL"
+    = f.text_field :rules
 
   %p
     %a.button.submit Update

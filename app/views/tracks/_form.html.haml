@@ -7,8 +7,6 @@
       - @track.errors.full_messages.each do |msg|
         %li= msg
 
-  %p
-    = f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}, {:prompt => 'Select a Track...'}, {:style => "width:100%"}
+  %p= f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}, {:prompt => 'Select a Track...'}, {:style => "width:100%"}
 
-  %p
-    = link_to "Submit Track", "#", :class => "button submit"
+  %p= link_to "Submit Track", "#", :class => "button submit"
