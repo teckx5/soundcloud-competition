@@ -6,10 +6,7 @@
     %ul
       - if current_user
         %li.non-mobile Hej, #{link_to(current_user.username, current_user.link, :target => "_blank")}
-        %li= link_to "Submit", submit_path
+      %li= link_to "Submit", submit_path
       - if !Track.first.nil?
         %li= link_to "Score", tracks_path
-      - if current_user
-        %li.non-mobile= link_to "Log out", logout_path
-      %li= link_to "Log in", login_path
 
