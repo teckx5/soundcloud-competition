@@ -94,6 +94,10 @@ body{
 
   .info{ h1, h2{ margin: 0; } div{ padding: 0; } }
 
+  #tracks .player{
+    @include player-sizing($small-player);
+  }
+
   // Voting
 
   .vote{

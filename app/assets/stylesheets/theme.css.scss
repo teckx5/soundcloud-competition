@@ -61,6 +61,10 @@ body{
   .about .comment{ border-bottom: 1px solid transparentize($border, 0.5); }
   .owner{ background: transparentize($border, 0.75); }
 
+  #tracks .player{
+
+  }
+
   // Header , Footer, & Caption
 
   .header, .footer{
