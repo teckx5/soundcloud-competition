@@ -57,6 +57,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcache-client (1.8.5)
+    memcached-northscale (0.19.5.4)
     mime-types (1.16)
     multi_json (1.0.3)
     multi_xml (0.2.2)
@@ -172,6 +174,8 @@ DEPENDENCIES
   coffee-script
   haml
   jquery-rails
+  memcache-client
+  memcached-northscale
   omniauth
   pg
   rails (= 3.1.0.rc4)
