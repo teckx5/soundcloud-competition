@@ -149,7 +149,11 @@ body{
   // Mobile Devices
 
   // iPhone
-  @media only screen and (max-width: 480px){ h1, h2{ font-size: 14px; } }
+  @media only screen and (max-width: 480px){
+    h1{ font-size: 15px; }
+    h2{ font-size: 14px; }
+    .header ul:last-child li:nth-child(2n){ border: none; }
+  }
 
   // iPad
   @media only screen and (max-width: 767px){ }
