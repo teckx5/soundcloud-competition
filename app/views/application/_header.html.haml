@@ -5,8 +5,7 @@
       %li= link_to "#{@competition.host} Competition", root_path
     %ul
       - if current_user
-        %li.non-mobile Hej, #{link_to(current_user.username, current_user.link, :target => "_blank")}
+        %li.non-mobile Hej, #{link_to current_user.username, current_user.link, :target => "_blank"}
+      %li= link_to "Score", tracks_path
       %li= link_to "Submit", submit_path
-      - if !Track.first.nil?
-        %li= link_to "Score", tracks_path
 
