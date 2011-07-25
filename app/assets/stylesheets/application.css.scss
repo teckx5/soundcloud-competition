@@ -85,8 +85,12 @@ body{
 
   .track, .comment, .info{
     & > div{
-      padding: 2%;
-      &:first-child{ float: left; width: 15%; }
+      //padding: 2%;
+      padding: 10px;
+      &:first-child{
+        float: left;
+        width: 15%;
+      }
       &:last-child{ margin-left: 17%; }
       p{ margin: 5px 0; overflow: hidden; }
     }
@@ -95,7 +99,7 @@ body{
   .info{ h1, h2{ margin: 0; } div{ padding: 0; } }
 
   #tracks .player{
-    @include player-sizing($small-player);
+    @include player-sizing(60px);
   }
 
   // Voting

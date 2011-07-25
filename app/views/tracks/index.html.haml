@@ -1,42 +1,20 @@
 .row
   .sixteen.columns
-    /%h1 Score Tracks
 
-    #tracks
+    %h1 Score Tracks
+
+    %div#tracks
 
       - for track in @tracks
 
-        %div
-          .clearfix
-            .fl
-              = link_to image_tag(track.artwork_url || track.user.avatar_url, :class => "scale-with-grid", :height => 77, :width => 77, :alt => track.user.username), '#', :class => "artwork", :target => "_blank"
-            %div(style="margin-left:85px")
-              %h2= track.title
-              %h3
-                Submitted by
-                = link_to track.user.username, track.user.link, :target => "_blank"
-                %em #{time_ago_in_words track.created_at} ago
-        %div
-          %a.player{:href => track.tid}
+        %div(style="border-top:1px solid whitesmoke;padding:5px")
 
+          .clearfix(style="margin:0")
 
+            %div.fl= link_to image_tag(track.artwork_url || track.user.avatar_url, :class => "scale-with-grid", :height => 52, :width => 52, :alt => track.user.username), track
 
-
-
-        %br
-
-
-      / .eleven.columns.half-bottom
-      /   .info.clearfix
-      /     %div
-      /       = link_to image_tag(track.artwork_url || track.user.avatar_url, :class => "scale-with-grid", :height => 100, :width => 100, :alt => track.user.username), '#', :class => "artwork", :target => "_blank"
-      /     %div
-      /       %h1= track.title
-      /       %h2
-      /         Submitted by
-      /         = link_to track.user.username, track.user.link, :target => "_blank"
-      /         %em #{time_ago_in_words @track.created_at} ago
-      /= render track
-      /%a.player{:href => track.tid}
+            %div(style="margin-left:60px;padding-top:5px")
+              %h3(style="margin:0 0 0 0")= track.title
+              %h4(style="margin:0")= link_to track.user.username, track.user.link, :target => "_blank"
 
 = render "player"
