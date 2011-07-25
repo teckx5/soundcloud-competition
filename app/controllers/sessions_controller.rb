@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    expire_fragment "user_tracks_#{session[:user_id]}"
     session[:user_id] = nil
     redirect_to root_url, :notice => "Logged out"
   end
