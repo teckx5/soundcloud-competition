@@ -2,6 +2,8 @@ class Track < ActiveRecord::Base
   acts_as_voteable
   belongs_to :user
   belongs_to :competition, :counter_cache => true
+  after_create :add_to_group
+  before_destroy :remove_from_group
 
   def self.identify_or_create_from_soundcloud(data)
     track_info = {
@@ -29,5 +31,15 @@ class Track < ActiveRecord::Base
 
   def next
     Track.find(:first, :conditions => ["id > ?", id], :order => "id ASC") || Track.first
+  end
+
+  private
+
+  def add_to_group
+    user.soundcloud.put("/groups/#{competition.group}/contributions/#{tid}")
+  end
+
+  def remove_from_group
+    user.soundcloud.delete("/groups/#{competition.group}/contributions/#{tid}")
   end
 end

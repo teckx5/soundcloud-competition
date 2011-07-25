@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110725005824) do
+ActiveRecord::Schema.define(:version => 20110725020002) do
 
   create_table "competitions", :force => true do |t|
     t.integer  "user_id"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(:version => 20110725005824) do
     t.text     "description"
     t.text     "prizes"
     t.text     "about"
-    t.string   "group"
+    t.integer  "group",        :limit => 255
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tracks_count", :default => 0
+    t.integer  "tracks_count",                :default => 0
     t.string   "rules"
     t.string   "download"
   end

@@ -33,6 +33,11 @@ class User < ActiveRecord::Base
     MultiJson.decode(soundcloud.get('/me/tracks.json').body)
   end
 
+  def soundcloud_groups
+    groups = MultiJson.decode(soundcloud.get('/me/groups.json').body)
+    groups.delete_if {|g| g["creator"]["id"] != uid }
+  end
+
   def link
     "http://soundcloud.com/#{permalink}"
   end

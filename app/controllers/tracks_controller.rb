@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
 
-  before_filter :load_competition, :only => [:index, :show, :new]
+  before_filter :load_competition, :except => [:favorite]
 
   def index
     @tracks = Track.all
@@ -16,9 +16,14 @@ class TracksController < ApplicationController
 
   def create
     track = MultiJson.decode(current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json").body)
-    current_user.soundcloud.put("/groups/33135/contributions/#{params[:track][:tid]}")
     @track = current_user.tracks.identify_or_create_from_soundcloud(track)
     redirect_to @track
+  end
+
+  def destroy
+    @track = Track.find(params[:id])
+    @track.destroy
+    redirect_to root_path
   end
 
   def favorite
@@ -35,11 +40,7 @@ class TracksController < ApplicationController
     render :json => res
   end
 
-  def destroy
-    @track = Track.find(params[:id])
-    @track.destroy
-    redirect_to root_path
-  end
+  private
 
   def load_competition
     @competition = Competition.first

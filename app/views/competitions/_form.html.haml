@@ -40,8 +40,8 @@
     = f.text_area :about, :rows => 10
 
   %p
-    = f.label :group, "Group URL"
-    = f.text_field :group
+    = f.label :group, "Group"
+    = f.select :group, current_user.soundcloud_groups.collect {|g| [ g["name"], g["id"] ]}, {:prompt => 'Select a Group...'}, {:style => "width:100%"}
 
   %p
     = f.label :download, "Stems Download URL"
