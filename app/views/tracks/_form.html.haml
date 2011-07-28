@@ -11,4 +11,8 @@
 
     %p= f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}, {:prompt => 'Select a Track...'}, {:style => "width:100%"}
 
-  %p= link_to "Submit Track", "#", :class => "button submit"
+  %p
+    %input#track_agreed(name="track[agreed]" type="checkbox" value=0)
+    I agree to the #{link_to "Contest Rules", @competition.rules, :style => "text-decoration:underline", :target => "_blank"}.
+
+  %p= link_to "Submit Track", nil, :class => "button submit disabled"

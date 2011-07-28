@@ -33,7 +33,6 @@ $small-player: 75px;
   margin: 0;
   outline-style: none;
   padding: 0;
-  -webkit-appearance: none;
   -webkit-text-size-adjust: none;
 }
 
@@ -46,7 +45,8 @@ body{
   hr{ clear: both; height: 0; }
 
   label{ display: block; margin: 0 0 5px; }
-  input, textarea{ padding: 1.5%; width: 97%; }
+  input[type="text"], textarea, select{ -webkit-appearance: none; }
+  input[type="text"], textarea{ padding: 1.5%; width: 97%; }
   select{ padding: 5px; }
 
   // Header & Caption
@@ -175,12 +175,10 @@ body{
     display: inline-block;
     margin: 0 0 5px 0;
     padding: 5px 10px;
+    &.disabled{ cursor: default; }
   }
 
-  .pagination span.current{
-    //background: pink;
-    padding: 5px 10px;
-  }
+  .pagination span.current{ padding: 5px 10px; }
 
   // Mobile Devices
 

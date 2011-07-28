@@ -139,6 +139,7 @@ body{
     &:hover{ color: $primary; }
     &.selected{ background: $border; color: $background; }
     &:focus{ border-color: darken($border, 10%); }
+    &.disabled{ color: $border; }
   }
 
   // Rounding & Transition

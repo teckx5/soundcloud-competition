@@ -92,7 +92,17 @@ jQuery ->
     $('.edit_competition').submit()
 
   $('.new_track .submit').click ->
-    $('.new_track').submit()
+    if $(@).hasClass('disabled')
+      alert "You must agree to the contest rules to submit."
+    else
+      $('.new_track').submit()
+    return false
+
+  $(':checkbox').click ->
+    if $(@).is(':checked')
+      $('.new_track .submit').removeClass('disabled')
+    else
+      $('.new_track .submit').addClass('disabled')
 
   ## Comments
 

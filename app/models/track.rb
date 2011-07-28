@@ -1,4 +1,5 @@
 class Track < ActiveRecord::Base
+  attr_accessor :agreed
   acts_as_voteable
   belongs_to :user
   belongs_to :competition, :counter_cache => true
