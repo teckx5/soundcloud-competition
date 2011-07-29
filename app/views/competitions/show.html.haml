@@ -6,7 +6,8 @@
       = markdown @competition.intro
       %p
         = link_to "Get Stems", @competition.download, :class => "button" if @competition.download
-        = link_to "Submit Track", submit_path, :class => "button"
+        = link_to "Submit", submit_path, :class => "button"
+        = link_to "Score", tracks_path, :class => "button"
 
   .banner.two-thirds.column
     = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"
@@ -40,7 +41,9 @@
       .tracks= render @competition.top_tracks
 
     .eight.columns
-      %h2 Latest Tracks
+      %h2
+        %span.fl Latest Tracks
+        %span.fr= link_to "View All Tracks", tracks_path
       .tracks= render @competition.latest_tracks
 
 .row.clearfix
