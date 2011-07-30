@@ -9,7 +9,7 @@
 
   - cache "user_tracks_#{current_user.id}" do
 
-    %p= f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}, {}, {:class => "chzn-select", :style => "width:100%", :data-placeholder => "Select a Track..."}
+    %p= f.select :tid, current_user.soundcloud_tracks.collect {|t| [ t["title"], t["id"] ]}, {:prompt => "Select a Track..."}, {:class => "chzn-select", :style => "width:100%"}
 
   %p
     %input#track_agreed(name="track[agreed]" type="checkbox" value=0)
