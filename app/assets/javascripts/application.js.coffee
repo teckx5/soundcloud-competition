@@ -1,5 +1,7 @@
 jQuery ->
 
+  $(".chzn-select").chosen()
+
   # mobile scroll jump
 
   if /mobile/i.test(navigator.userAgent)
