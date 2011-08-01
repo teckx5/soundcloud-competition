@@ -31,4 +31,5 @@
       = render "footer"
 
     :javascript
+      group = "http://api.soundcloud.com/groups/#{@competition.group}?consumer_key=#{Settings.key}";
       key = "#{Settings.key}";

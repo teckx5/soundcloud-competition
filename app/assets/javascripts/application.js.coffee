@@ -1,10 +1,14 @@
 jQuery ->
 
+  # initialize chosen select
+
   $(".chzn-select").chosen()
 
-  # mobile scroll jump
+  # mobile check
 
   if /mobile/i.test(navigator.userAgent)
+
+    # scroll fix
 
     setTimeout =>
       window.scrollTo(0, 1)
