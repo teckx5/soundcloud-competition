@@ -21,3 +21,5 @@ data = {
 }
 
 Competition.create(data)
+
+puts "Competition, fuck yeh."

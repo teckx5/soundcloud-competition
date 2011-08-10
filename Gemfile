@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc4'
-gem 'sprockets', '2.0.0.beta.13'
+gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git', :tag => 'v2.0.0.beta.10'
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
