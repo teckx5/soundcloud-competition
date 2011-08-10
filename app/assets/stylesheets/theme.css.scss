@@ -73,7 +73,7 @@ body{
     $color: lighten($opaque, 25%);
     @include background-gradient($color, $opaque);
     a{ color: $background; }
-    li{ border-color: $color; }
+    li{ color: $color; border-color: $color; }
     div.logo{ background: url('/assets/logo.png'); border-right: 1px solid $color; }
   }
 
