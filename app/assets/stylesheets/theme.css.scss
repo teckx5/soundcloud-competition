@@ -147,6 +147,13 @@ body{
   select, input, textarea, .vote, .button{ @include border-radius($radius); }
   input, textarea, .votes > a, .button{ @include transition(0.5s); }
 
+
+  // Chosen Select
+
+  .chzn-container ul.chzn-results li.highlighted {
+    background: $border;
+  }
+
   // Mobile Devices
 
   // iPhone

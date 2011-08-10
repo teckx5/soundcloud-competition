@@ -51,14 +51,12 @@ body{
 
   // Header & Caption
 
-  .header, .footer{
-    ul{
-      list-style: none;
-      padding: 10px 0;
-      &:first-child{ float: left; }
-      &:last-child{ float: right; }
-      li{ display: inline-block; padding: 0 10px; }
-    }
+  .header ul, .footer ul{
+    list-style: none;
+    padding: 10px 0;
+    &:first-child{ float: left; }
+    &:last-child{ float: right; }
+    li{ display: inline-block; padding: 0 10px; }
   }
 
   .header{
@@ -133,11 +131,7 @@ body{
 
     .controls{
       float: left;
-      a{
-        display: block;
-        height: 70%; width: 70%;
-        left: 15%; top: 15%;
-      }
+      a{ display: block; height: 70%; width: 70%; left: 15%; top: 15%; }
       .play, .pause{ border-style: solid; }
       .play{ height: 0; width: 0; }
       .pause{ display: none; }
@@ -201,5 +195,6 @@ body{
   .remove-bottom{ margin-bottom: 0; }
   .half-bottom{ margin-bottom: 10px; }
   .remove-top{ margin-top: 0; }
+  .chzn-select{ width: 100%; }
 
 }

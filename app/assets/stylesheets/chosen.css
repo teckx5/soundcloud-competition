@@ -17,18 +17,18 @@ div.chzn-container input {
   margin: 0px;
   padding: 4px 20px 4px 5px;
   outline: none;
-  -moz-border-radius: 3px;
+  /*-moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   -ms-border-radius: 3px;
   -khtml-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 3px;*/
 }
 div.chzn-container textarea:focus {
-  border-color: #058cf5;
+  /*border-color: #058cf5;
   -moz-box-shadow: 0px 0px 3px #aaa;
   -webkit-box-shadow: 0px 0px 3px #aaa;
-  box-shadow: 0px 0px 3px #aaa;
+  box-shadow: 0px 0px 3px #aaa;*/
 }
 
 
@@ -45,12 +45,12 @@ div.chzn-container div.chzn-drop {
   z-index: 999;
 }
 div.chzn-container-single div.chzn-drop {
-  -moz-border-radius: 0 0 4px 4px;
+  /*-moz-border-radius: 0 0 4px 4px;
   -webkit-border-radius: 0 0 4px 4px;
   -o-border-radius: 0 0 4px 4px;
   -ms-border-radius: 0 0 4px 4px;
   -khtml-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;*/
 }
 
 
@@ -66,12 +66,12 @@ div.chzn-container a.chzn-single {
   border: 1px solid #aaa;
   display: block;
   overflow: hidden;
-  -moz-border-radius: 4px;
+  /*-moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
   -ms-border-radius: 4px;
   -khtml-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 4px;*/
   height: 25px;
   color: #444;
   line-height: 26px;
@@ -87,7 +87,7 @@ div.chzn-container a.chzn-single span {
   text-overflow: ellipsis;
 }
 div.chzn-container a.chzn-single div {
-  -moz-border-radius-topright: 4px;
+  /*-moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
   -o-border-top-right-radius: 4px;
   -ms-border-top-right-radius: 4px;
@@ -98,7 +98,7 @@ div.chzn-container a.chzn-single div {
   -o-border-bottom-right-radius: 4px;
   -ms-border-bottom-right-radius: 4px;
   -khtml-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;*/
   background: #ccc;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
   background-image: -moz-linear-gradient(center bottom, #ccc 0%, #eee 60%);
@@ -133,12 +133,12 @@ div.chzn-container div.chzn-search input {
   background: url('chosen-sprite.png') no-repeat 100% -20px, -ms-linear-gradient(top, #ffffff 85%,#eeeeee 99%);
   background: url('chosen-sprite.png') no-repeat 100% -20px, -ms-linear-gradient(top, #ffffff 85%,#eeeeee 99%);
   background: linear-gradient(top, #ffffff 85%,#eeeeee 99%);
-  -moz-border-radius: 0px;
+  /*-moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   -o-border-radius: 0px;
   -ms-border-radius: 0px;
   -khtml-border-radius: 0px;
-  border-radius: 0px;
+  border-radius: 0px;*/
   margin: 1px 0;
   outline: 0;
 }
@@ -193,9 +193,9 @@ div.chzn-container ul.chzn-choices li.search-field input.default {
   color: #999;
 }
 div.chzn-container ul.chzn-choices li.search-choice {
-  -moz-border-radius: 3px;
+  /*-moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 3px;*/
   background: #e4e4e4;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #e4e4e4), color-stop(0.7, #eeeeee));
   background-image: -moz-linear-gradient(center bottom, #e4e4e4 0%, #eeeeee 70%);
@@ -265,8 +265,8 @@ div.chzn-container ul.chzn-results li em {
   background: #FEFFDC;
 }
 div.chzn-container ul.chzn-results li.highlighted {
-  background: #3875d7;
-  color: #fff;
+  /*background: #3875d7;*/
+  /*color: #fff;*/
 }
 div.chzn-container ul.chzn-results li.highlighted em {
   background: transparent;
@@ -291,10 +291,10 @@ div.chzn-container-multi div.chzn-drop li.result-selected {
 
 /* Active */
 div.chzn-container-active a.chzn-single {
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  /*-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #5897fb;
+  border: 1px solid #5897fb;*/
 }
 div.chzn-container-active a.chzn-single-with-drop {
   border: 1px solid #aaa;
@@ -309,12 +309,12 @@ div.chzn-container-active a.chzn-single-with-drop {
   background-image: -ms-linear-gradient(top, #ffffff 0%,#eeeeee 50%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
   background-image: linear-gradient(top, #ffffff 0%,#eeeeee 50%);
-  -webkit-border-bottom-left-radius: 0px;
+  /*-webkit-border-bottom-left-radius: 0px;
   -webkit-border-bottom-right-radius: 0px;
   -moz-border-radius-bottomleft: 0px;
   -moz-border-radius-bottomright: 0px;
   border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;*/
 }
 div.chzn-container-active a.chzn-single-with-drop div {
   background: transparent;

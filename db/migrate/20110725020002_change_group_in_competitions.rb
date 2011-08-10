@@ -5,7 +5,7 @@ class ChangeGroupInCompetitions < ActiveRecord::Migration
   end
 
   def down
-    remove_column :competitions, :groups
+    remove_column :competitions, :group
     add_column :competitions, :group, :string
   end
 end
