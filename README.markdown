@@ -1,1 +1,1 @@
-## SoundCloud Competition
+SoundCloud Competition
