@@ -3,7 +3,9 @@
 
   .nav
     %ul
-      %li= link_to "#{@competition.host} <span class='non-mobile'>Competition</span>", root_path
+      %li
+        %a(href="#")
+          #{@competition.host} <span class="non-mobile">#{@competition.title}</span>
     %ul
       - if current_user
         %li.non-mobile Hej, #{link_to current_user.username, current_user.link, :target => "_blank"}
