@@ -4,7 +4,7 @@
   .nav
     %ul
       %li
-        %a(href="#")
+        %a{:href => root_path}
           #{@competition.host} <span class="non-mobile">#{@competition.title}</span>
     %ul
       - if current_user
