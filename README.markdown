@@ -1,5 +1,7 @@
 ### SoundCloud Competition
 
+Competitions, powered by [SoundCloud](http://soundcloud.com).
+
 1. Add key and secret to "/config/settings/production.local.yml"
 2. For local development, run bundle install --without production
 3. heroku create app_name --stack cedar
