@@ -7,5 +7,5 @@
     %ul
       - if @competition.rules
         %li= link_to "Rules", @competition.rules
-      %li= link_to "Top", '#top'
+      %li= link_to "Top", nil, :class => "top"
       %li= link_to image_tag("soundcloud.png"), "http://soundcloud.com"

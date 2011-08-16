@@ -92,6 +92,12 @@ jQuery ->
 
   # GUI Events
 
+  ## Scroll Top
+
+  $('.top').click ->
+    $('html, body').animate scrollTop: 0
+    return false
+
   ## Edit Form
 
   $('.edit_competition .submit').click ->
