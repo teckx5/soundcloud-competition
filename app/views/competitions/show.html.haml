@@ -17,9 +17,12 @@
   .status.one-third.column
     %div
       %h2 Competition Status
-      %p #{distance_of_time_in_words @competition.end_date, Time.now} left to submit
-      %h3 Submit From
-      %p #{@competition.start_date.strftime "%B %e"} > #{@competition.end_date.strftime "%B %e, %Y"}
+      - if Time.now < @competition.end_date
+        %p #{distance_of_time_in_words @competition.end_date, Time.now} left to submit
+        %h3 Submit From
+        %p #{@competition.start_date.strftime "%B %e"} > #{@competition.end_date.strftime "%B %e, %Y"}
+      - else
+        %p Competition is now closed.
       %h3 Share this Competition
       %p
         %a.button(href="http://twitter.com/share" target="_blank") Twitter
