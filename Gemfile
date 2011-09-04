@@ -12,6 +12,7 @@ gem 'thumbs_up'
 gem 'redcarpet'
 gem 'rails_config'
 gem 'kaminari'
+gem 'soundcloud'
 
 group :test do
   gem 'turn', :require => false

@@ -200,9 +200,14 @@ jQuery ->
   ## Favorites
 
   loadFavorite = () ->
-    $.getJSON $('.favorite').attr("href"), (data) ->
-      $('.favorite').addClass("selected") if not data.errors
-
+    $.ajax
+      type: 'get'
+      url: $('.favorite').attr('href')
+      success: (data) ->
+        $('.favorite').addClass('selected')
+      error: (err) ->
+        # error
+        
   ## Reminder Player
 
   showReminder = () ->

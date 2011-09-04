@@ -11,8 +11,7 @@ class User < ActiveRecord::Base
       :avatar_url => auth["user_info"]["image"],
       :city => auth["extra"]["user_hash"]["city"],
       :country => auth["extra"]["user_hash"]["country"],
-      :token => auth["credentials"]["token"],
-      :secret => auth["credentials"]["secret"]
+      :token => auth["credentials"]["token"]
     }
 
     if user = User.find_by_uid(user_info[:uid])
@@ -25,17 +24,16 @@ class User < ActiveRecord::Base
   end
 
   def soundcloud
-    consumer = OAuth::Consumer.new(Settings.key, Settings.secret, {:site => "https://api.soundcloud.com"})
-    OAuth::AccessToken.new(consumer, token, secret)
+    Soundcloud.new(:client_id => Settings.key, :client_secret => Settings.secret, :access_token => token)
   end
 
   def soundcloud_tracks
-    tracks = MultiJson.decode(soundcloud.get('/me/tracks.json').body)
+    tracks = soundcloud.get('/me/tracks.json')
     tracks.delete_if {|t| t["sharing"] != "public" }
   end
 
   def soundcloud_groups
-    groups = MultiJson.decode(soundcloud.get('/me/groups.json').body)
+    groups = soundcloud.get('/me/groups.json')
     groups.delete_if {|g| g["creator"]["id"] != uid }
   end
 

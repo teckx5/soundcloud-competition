@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110725020002) do
+ActiveRecord::Schema.define(:version => 20110904173830) do
 
   create_table "competitions", :force => true do |t|
     t.integer  "user_id"
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20110725020002) do
     t.string   "city"
     t.string   "country"
     t.string   "token"
-    t.string   "secret"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

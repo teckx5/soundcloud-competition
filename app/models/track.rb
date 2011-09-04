@@ -37,10 +37,10 @@ class Track < ActiveRecord::Base
   private
 
   def add_to_group
-    user.soundcloud.put("/groups/#{competition.group}/contributions/#{tid}")
+    user.soundcloud.put("/groups/#{competition.group}/contributions/#{tid}") if competition.group
   end
 
   def remove_from_group
-    user.soundcloud.delete("/groups/#{competition.group}/contributions/#{tid}")
+    user.soundcloud.delete("/groups/#{competition.group}/contributions/#{tid}") if competition.group
   end
 end

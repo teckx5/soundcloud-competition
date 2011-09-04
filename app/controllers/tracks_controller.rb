@@ -15,7 +15,7 @@ class TracksController < ApplicationController
   end
 
   def create
-    track = MultiJson.decode(current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json").body)
+    track = current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json")
     @track = current_user.tracks.identify_or_create_from_soundcloud(track)
     redirect_to @track
   end
@@ -30,11 +30,11 @@ class TracksController < ApplicationController
     @track = Track.find(params[:id])
 
     if request.method == "PUT"
-      res = current_user.soundcloud.put("/me/favorites/#{@track.tid}.json").body
+      res = current_user.soundcloud.put("/me/favorites/#{@track.tid}.json")
     elsif request.method == "DELETE"
-      res = current_user.soundcloud.delete("/me/favorites/#{@track.tid}.json").body
+      res = current_user.soundcloud.delete("/me/favorites/#{@track.tid}.json")
     else
-      res = current_user.soundcloud.get("/me/favorites/#{@track.tid}.json").body
+      res = current_user.soundcloud.get("/me/favorites/#{@track.tid}.json")
     end
 
     render :json => res
