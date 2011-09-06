@@ -41,6 +41,10 @@ class Track < ActiveRecord::Base
   end
 
   def remove_from_group
-    user.soundcloud.delete("/groups/#{competition.group}/contributions/#{tid}") if competition.group
+    begin
+      user.soundcloud.delete("/groups/#{competition.group}/contributions/#{tid}") if competition.group
+    rescue Soundcloud::ResponseError
+      puts "Track was not in group."
+    end
   end
 end
