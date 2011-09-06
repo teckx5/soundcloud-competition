@@ -6,7 +6,7 @@
 
     %h2 Your Challenge
     = markdown @competition.intro
-    %p= link_to "Get Stems", @competition.download, :class => "button" if @competition.download
+    %p= link_to "Get Stems", @competition.download, :class => "button" if !@competition.download.blank?
 
     %hr.large
 
