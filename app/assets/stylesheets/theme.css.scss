@@ -74,7 +74,7 @@ body{
     @include background-gradient($color, $opaque);
     a{ color: $background; }
     li{ color: $color; border-color: $color; }
-    div.logo{ background: url('/assets/logo.png'); border-right: 1px solid $color; }
+    div.logo{ background: image-url("logo.png"); border-right: 1px solid $color; }
   }
 
   .footer{

@@ -1,11 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
-gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git', :tag => 'v2.0.0.beta.10'
-gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
-gem 'uglifier'
-gem 'jquery-rails'
+gem 'rails', :git => "git://github.com/rails/rails.git", :branch => '3-1-stable'
+
 gem 'haml'
 gem 'omniauth', :git => "git://github.com/intridea/omniauth.git", :branch => '0-3-stable'
 gem 'thumbs_up'
@@ -13,6 +9,14 @@ gem 'redcarpet'
 gem 'rails_config'
 gem 'kaminari'
 gem 'soundcloud'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
 
 group :test do
   gem 'turn', :require => false
@@ -24,6 +28,5 @@ end
 
 group :production do
   gem 'pg'
-  gem 'therubyracer-heroku', '0.8.1.pre3'
   gem 'dalli'
 end
