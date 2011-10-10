@@ -6,8 +6,9 @@
       = markdown @competition.intro
       %p
         = link_to "Get Stems", @competition.download, :class => "button" if !@competition.download.blank?
-        = link_to "Submit", submit_path, :class => "button"
-        = link_to "Score", tracks_path, :class => "button"
+        - if Time.now < @competition.end_date
+          = link_to "Submit", submit_path, :class => "button"
+          = link_to "Score", tracks_path, :class => "button"
 
   .banner.two-thirds.column
     = image_tag "banner.jpg", :height => 300, :width => 620, :class => "scale-with-grid", :alt => "#{@competition.host} #{@competition.title}"

@@ -11,7 +11,11 @@ class TracksController < ApplicationController
   end
 
   def new
-    @track = @competition.tracks.new
+    if Time.now < @competition.end_date
+      @track = @competition.tracks.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create

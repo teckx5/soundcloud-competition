@@ -10,5 +10,6 @@
       - if current_user
         %li.non-mobile Hej, #{link_to current_user.username, current_user.link, :target => "_blank"}
       %li= link_to "Score", tracks_path
-      %li= link_to "Submit", submit_path
+      - if Time.now < @competition.end_date
+        %li= link_to "Submit", submit_path
 
