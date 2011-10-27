@@ -8,7 +8,7 @@ gem 'thumbs_up'
 gem 'redcarpet'
 gem 'rails_config'
 gem 'kaminari'
-gem 'soundcloud'
+gem 'soundcloud', "~> 0.2.9"
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
