@@ -28,8 +28,25 @@ class User < ActiveRecord::Base
   end
 
   def soundcloud_tracks
-    tracks = soundcloud.get('/me/tracks.json')
-    tracks.delete_if {|t| t["sharing"] != "public" }
+    tracks = []
+    eof = false    
+    offset = 0
+
+    until eof == true do    
+      new_tracks = soundcloud.get("/me/tracks.json?offset=#{offset}")
+
+      eof = true if new_tracks.length == 0
+
+      for track in new_tracks
+        if track.sharing == "public"
+          tracks.push(track)
+        end
+      end
+
+      offset += 50
+    end
+
+    tracks
   end
 
   def soundcloud_groups
