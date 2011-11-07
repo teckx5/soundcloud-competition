@@ -1,4 +1,11 @@
 jQuery ->
+  
+  # center caption  
+  $(window).resize ->
+    $('.caption > div').css
+      top: ( $('.caption').height() - $('.caption > div').height() ) / 2
+      
+  $(window).resize()
 
   # initialize chosen select
 

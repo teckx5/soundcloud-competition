@@ -1,13 +1,13 @@
 $big-player: 100px;
 $small-player: 75px;
 
-@mixin ellipsis{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+@import "compass/typography/text";
+@import "compass/reset";
+
 @mixin player-sizing($size){
-  &, & > div{ height: $size; }
+  &, & > div{
+    height: $size;
+  }  
   .controls{
     width: $size;
     .play{
@@ -25,21 +25,14 @@ $small-player: 75px;
       top: ($size - $control-size) / 2;
     }
   }
-  .time{ margin-left: $size; }
-}
-
-*{
-  border: 0;
-  margin: 0;
-  outline-style: none;
-  padding: 0;
-  -webkit-text-size-adjust: none;
+  .time{
+    margin-left: $size;
+  }
 }
 
 body{
 
   // Main Styles
-
   p, h1, h2, h3, hr{ margin: 10px 0; }
   h1, h2, h3, h4{ @include ellipsis; }
   hr{ clear: both; height: 0; }
@@ -70,7 +63,12 @@ body{
     }
   }
 
-  .caption div{ padding: 5px 20px 5px 20px; }
+  .caption{ position: relative; }
+  
+  .caption div{
+    padding: 5px 20px 5px 20px;
+    position: absolute;
+  }
 
   // Prizes
 

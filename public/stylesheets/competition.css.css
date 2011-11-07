@@ -1,0 +1,427 @@
+/* line 17, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../usr/local/rvm/gems/ruby-1.9.2-p180/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 36, ../../app/assets/stylesheets/competition.css.scss */
+body p, body h1, body h2, body h3, body hr {
+  margin: 10px 0;
+}
+/* line 37, ../../app/assets/stylesheets/competition.css.scss */
+body h1, body h2, body h3, body h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 38, ../../app/assets/stylesheets/competition.css.scss */
+body hr {
+  clear: both;
+  height: 0;
+}
+/* line 40, ../../app/assets/stylesheets/competition.css.scss */
+body label {
+  display: block;
+  margin: 0 0 5px;
+}
+/* line 41, ../../app/assets/stylesheets/competition.css.scss */
+body input[type="text"], body textarea, body select {
+  -webkit-appearance: none;
+}
+/* line 42, ../../app/assets/stylesheets/competition.css.scss */
+body input[type="text"], body textarea {
+  padding: 1.5%;
+  width: 97%;
+}
+/* line 43, ../../app/assets/stylesheets/competition.css.scss */
+body select {
+  padding: 5px;
+}
+/* line 47, ../../app/assets/stylesheets/competition.css.scss */
+body .header ul, body .footer ul {
+  list-style: none;
+  padding: 10px 0;
+}
+/* line 50, ../../app/assets/stylesheets/competition.css.scss */
+body .header ul:first-child, body .footer ul:first-child {
+  float: left;
+}
+/* line 51, ../../app/assets/stylesheets/competition.css.scss */
+body .header ul:last-child, body .footer ul:last-child {
+  float: right;
+}
+/* line 52, ../../app/assets/stylesheets/competition.css.scss */
+body .header ul li, body .footer ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+/* line 55, ../../app/assets/stylesheets/competition.css.scss */
+body .header {
+  margin-bottom: 30px;
+}
+/* line 57, ../../app/assets/stylesheets/competition.css.scss */
+body .header .nav {
+  margin-left: 35px;
+}
+/* line 58, ../../app/assets/stylesheets/competition.css.scss */
+body .header .logo {
+  height: 35px;
+  position: absolute;
+  top: 0px;
+  width: 35px;
+}
+/* line 66, ../../app/assets/stylesheets/competition.css.scss */
+body .caption {
+  position: relative;
+}
+/* line 68, ../../app/assets/stylesheets/competition.css.scss */
+body .caption div {
+  padding: 5px 20px 5px 20px;
+  position: absolute;
+}
+/* line 75, ../../app/assets/stylesheets/competition.css.scss */
+body .prizes ul {
+  margin-left: 18px;
+}
+/* line 77, ../../app/assets/stylesheets/competition.css.scss */
+body .prizes ul li {
+  margin-bottom: 10px;
+}
+/* line 83, ../../app/assets/stylesheets/competition.css.scss */
+body .track > div, body .comment > div, body .info > div {
+  padding: 10px;
+}
+/* line 85, ../../app/assets/stylesheets/competition.css.scss */
+body .track > div:first-child, body .comment > div:first-child, body .info > div:first-child {
+  float: left;
+}
+/* line 86, ../../app/assets/stylesheets/competition.css.scss */
+body .track > div p, body .comment > div p, body .info > div p {
+  margin: 5px 0;
+  overflow: hidden;
+}
+/* line 87, ../../app/assets/stylesheets/competition.css.scss */
+body .track > div h1, body .track > div h2, body .track > div h3, body .comment > div h1, body .comment > div h2, body .comment > div h3, body .info > div h1, body .info > div h2, body .info > div h3 {
+  margin: 0;
+}
+/* line 92, ../../app/assets/stylesheets/competition.css.scss */
+body .track > div:first-child, body .comment > div:first-child {
+  width: 60px;
+}
+/* line 93, ../../app/assets/stylesheets/competition.css.scss */
+body .track > div:last-child, body .comment > div:last-child {
+  margin-left: 70px;
+}
+/* line 97, ../../app/assets/stylesheets/competition.css.scss */
+body .info > div:first-child {
+  width: 15%;
+}
+/* line 98, ../../app/assets/stylesheets/competition.css.scss */
+body .info > div:last-child {
+  margin-left: 17%;
+}
+/* line 99, ../../app/assets/stylesheets/competition.css.scss */
+body .info div {
+  padding: 0;
+}
+/* line 104, ../../app/assets/stylesheets/competition.css.scss */
+body .vote {
+  border-spacing: 0;
+  display: table;
+  text-align: right;
+  width: 100%;
+}
+/* line 109, ../../app/assets/stylesheets/competition.css.scss */
+body .vote .votes {
+  display: table-row;
+}
+/* line 111, ../../app/assets/stylesheets/competition.css.scss */
+body .vote .votes a {
+  cursor: pointer;
+}
+/* line 111, ../../app/assets/stylesheets/competition.css.scss */
+body .vote .votes a.voted {
+  cursor: default;
+}
+/* line 112, ../../app/assets/stylesheets/competition.css.scss */
+body .vote .votes > * {
+  display: table-cell;
+  padding: 5px 0;
+  text-align: center;
+  width: 33%;
+}
+/* line 123, ../../app/assets/stylesheets/competition.css.scss */
+body .holder {
+  height: 100px;
+}
+/* line 8, ../../app/assets/stylesheets/competition.css.scss */
+body div.player, body div.player > div {
+  height: 100px;
+}
+/* line 11, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls {
+  width: 100px;
+}
+/* line 13, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls .play {
+  border-width: 12.5px;
+  left: 46.875px;
+  top: 40.625px;
+}
+/* line 19, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls .pause {
+  border-width: 0 4px 0 4px !important;
+  height: 20px !important;
+  width: 4px !important;
+  left: 44px;
+  top: 40px;
+}
+/* line 28, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .time {
+  margin-left: 100px;
+}
+/* line 128, ../../app/assets/stylesheets/competition.css.scss */
+body div.player > div {
+  cursor: pointer;
+  position: relative;
+}
+/* line 128, ../../app/assets/stylesheets/competition.css.scss */
+body div.player > div * {
+  position: absolute;
+}
+/* line 130, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls {
+  float: left;
+}
+/* line 132, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls a {
+  display: block;
+  height: 70%;
+  width: 70%;
+  left: 15%;
+  top: 15%;
+}
+/* line 133, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls .play, body div.player .controls .pause {
+  border-style: solid;
+}
+/* line 134, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls .play {
+  height: 0;
+  width: 0;
+}
+/* line 135, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .controls .pause {
+  display: none;
+}
+/* line 138, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .time * {
+  height: 100%;
+}
+/* line 138, ../../app/assets/stylesheets/competition.css.scss */
+body div.player .time img {
+  display: none;
+  width: 100%;
+}
+/* line 141, ../../app/assets/stylesheets/competition.css.scss */
+body div.player.playing .play {
+  display: none;
+}
+/* line 142, ../../app/assets/stylesheets/competition.css.scss */
+body div.player.playing .pause {
+  display: block;
+}
+/* line 148, ../../app/assets/stylesheets/competition.css.scss */
+body .stats ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+/* line 151, ../../app/assets/stylesheets/competition.css.scss */
+body .stats ul li {
+  padding: 5px 0;
+}
+/* line 156, ../../app/assets/stylesheets/competition.css.scss */
+body .reminder {
+  display: none;
+}
+/* line 158, ../../app/assets/stylesheets/competition.css.scss */
+body .reminder.sticky {
+  border: none;
+  position: fixed;
+  top: 0px;
+}
+/* line 161, ../../app/assets/stylesheets/competition.css.scss */
+body .about .player, body .reminder .player {
+  margin-bottom: 10px;
+}
+/* line 8, ../../app/assets/stylesheets/competition.css.scss */
+body .about .player, body .about .player > div, body .reminder .player, body .reminder .player > div {
+  height: 75px;
+}
+/* line 11, ../../app/assets/stylesheets/competition.css.scss */
+body .about .player .controls, body .reminder .player .controls {
+  width: 75px;
+}
+/* line 13, ../../app/assets/stylesheets/competition.css.scss */
+body .about .player .controls .play, body .reminder .player .controls .play {
+  border-width: 9.375px;
+  left: 35.156px;
+  top: 30.469px;
+}
+/* line 19, ../../app/assets/stylesheets/competition.css.scss */
+body .about .player .controls .pause, body .reminder .player .controls .pause {
+  border-width: 0 3px 0 3px !important;
+  height: 15px !important;
+  width: 3px !important;
+  left: 33px;
+  top: 30px;
+}
+/* line 28, ../../app/assets/stylesheets/competition.css.scss */
+body .about .player .time, body .reminder .player .time {
+  margin-left: 75px;
+}
+/* line 165, ../../app/assets/stylesheets/competition.css.scss */
+body .button, body .pagination a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 5px 0;
+  padding: 5px 10px;
+}
+/* line 170, ../../app/assets/stylesheets/competition.css.scss */
+body .button.disabled, body .pagination a.disabled {
+  cursor: default;
+}
+/* line 173, ../../app/assets/stylesheets/competition.css.scss */
+body .pagination span.current {
+  padding: 5px 10px;
+}
+@media only screen and (max-width: 767px) {
+  /* line 178, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder {
+    height: 75px;
+  }
+  /* line 180, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder .player {
+    margin: 0;
+  }
+  /* line 8, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder .player, body .holder .player > div {
+    height: 75px;
+  }
+  /* line 11, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder .player .controls {
+    width: 75px;
+  }
+  /* line 13, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder .player .controls .play {
+    border-width: 9.375px;
+    left: 35.156px;
+    top: 30.469px;
+  }
+  /* line 19, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder .player .controls .pause {
+    border-width: 0 3px 0 3px !important;
+    height: 15px !important;
+    width: 3px !important;
+    left: 33px;
+    top: 30px;
+  }
+  /* line 28, ../../app/assets/stylesheets/competition.css.scss */
+  body .holder .player .time {
+    margin-left: 75px;
+  }
+  /* line 185, ../../app/assets/stylesheets/competition.css.scss */
+  body .caption, body .status, body .stats, body .non-mobile {
+    display: none !important;
+  }
+}
+/* line 190, ../../app/assets/stylesheets/competition.css.scss */
+body .fl {
+  float: left;
+}
+/* line 191, ../../app/assets/stylesheets/competition.css.scss */
+body .fr {
+  float: right;
+}
+/* line 192, ../../app/assets/stylesheets/competition.css.scss */
+body .scale-with-grid {
+  max-width: 100%;
+  height: auto;
+}
+/* line 193, ../../app/assets/stylesheets/competition.css.scss */
+body .remove-bottom {
+  margin-bottom: 0;
+}
+/* line 194, ../../app/assets/stylesheets/competition.css.scss */
+body .half-bottom {
+  margin-bottom: 10px;
+}
+/* line 195, ../../app/assets/stylesheets/competition.css.scss */
+body .remove-top {
+  margin-top: 0;
+}
+/* line 196, ../../app/assets/stylesheets/competition.css.scss */
+body .chzn-select {
+  width: 100%;
+}

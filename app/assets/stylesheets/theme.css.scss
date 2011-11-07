@@ -9,33 +9,9 @@ $radius: 0px;
 $text: #555555;
 $thick: 3px;
 
-@mixin border-radius($size){
-  border-radius: $size;
-  -moz-border-radius: $size;
-  -webkit-border-radius: $size;
-}
-@mixin box-shadow($color, $size){
-  -moz-box-shadow: inset 0 0 0 $size $color;
-  -webkit-box-shadow: inset 0 0 0 $size $color;
-  box-shadow: inset 0 0 0 $size $color;
-}
-@mixin background-gradient($start-color, $end-color){
-  background: $start-color;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba($start-color, 1)), to(rgba($end-color, 1)));
-  background: -moz-linear-gradient(top, rgba($start-color, 1), rgba($end-color, 1) 100%);
-}
-@mixin transition($time){
-  -webkit-transition: $time all;
-  -moz-transition: $time all;
-}
-@mixin waveform-gradient($color){
-  background: $color;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to($color), color-stop(.4, lighten($color, 10%)), color-stop(.6, lighten($color, 10%)));
-  background: -moz-linear-gradient(top, $color, lighten($color, 10%) 40%, lighten($color, 10%) 60%, $color);
-}
+@import "compass/css3";
 
 body{
-
   background: $background;
   color: $text;
   font: 12px Futura, Helvetica, sans-serif;
@@ -44,6 +20,9 @@ body{
 
   a{ color: $primary; text-decoration: none; }
   h1, h2, h3, h4{ color: $headers; font-weight: normal; }
+  h1{ font-size: 24px; }
+  h2{ font-size: 18px; }
+  h3{ font-size: 14px; }
   hr{ border: solid transparentize($border, 0.5); border-width: 1px 0 0; &.large{ border-width: $thick 0 0; } }
   em{ color: $border; font-style: normal; }
 
@@ -71,7 +50,7 @@ body{
 
   .header{
     $color: lighten($opaque, 25%);
-    @include background-gradient($color, $opaque);
+    @include background(linear-gradient($color, $opaque));
     a{ color: $background; }
     li{ color: $color; border-color: $color; }
     div.logo{ background: image-url("logo.png"); border-right: 1px solid $color; }
@@ -94,7 +73,7 @@ body{
     border: 1px solid $border;
     .votes > div{ color: $primary; }
     .votes > a{
-      @include background-gradient($button, $background);
+      @include background(linear-gradient($button, $background));
       border-left: 1px solid $border;
       color: $text;
       &:hover{ color: $primary; }
@@ -108,18 +87,19 @@ body{
     border: 1px solid $border;
     .controls{
       a{
-        @include background-gradient($control, $background);
+        @include background(linear-gradient($control, $background));
         @include border-radius(100px);
-        @include box-shadow($control, $thick);
+        @include box-sizing(border-box);
+        border: $thick solid $control;
       }
       .play{ border-color: transparent transparent transparent $control; }
       .pause{ border-color: $control; }
     }
     .time{
       border-left: 1px solid $border;
-      @include waveform-gradient(#D3D3D3);
-      .loaded{ @include waveform-gradient(#959595); }
-      .played{ @include waveform-gradient($primary); }
+      @include background-image(linear-gradient(#D3D3D3, lighten(#D3D3D3, 10%) 40%, lighten(#D3D3D3, 10%) 60%, #D3D3D3));
+      .loaded{ @include background-image(linear-gradient(#959595, lighten(#959595, 10%) 40%, lighten(#959595, 10%) 60%, #959595)); }
+      .played{ @include background-image(linear-gradient($primary, lighten($primary, 10%) 40%, lighten($primary, 10%) 60%, $primary)); }
     }
   }
 
@@ -130,7 +110,7 @@ body{
   // Buttons
 
   .button, .pagination a{
-    @include background-gradient($background, $button);
+    @include background(linear-gradient($background, $button));
     border: 1px solid $border;
     color: $text;
     &:hover{ color: $primary; }
@@ -142,8 +122,7 @@ body{
   // Rounding & Transition
 
   select, input, textarea, .vote, .button{ @include border-radius($radius); }
-  input, textarea, .votes > a, .button{ @include transition(0.5s); }
-
+  input, textarea, .votes > a, .button{ @include single-transition(all 1s); }
 
   // Chosen Select
 
