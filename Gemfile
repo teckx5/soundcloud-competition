@@ -12,7 +12,7 @@ gem 'sass-rails', " ~> 3.1.0"
 gem 'jquery-rails'
 gem 'haml'
 gem 'omniauth', :git => "git://github.com/intridea/omniauth.git", :branch => '0-3-stable'
-gem 'thumbs_up'
+gem 'thumbs_up', :git => "git://github.com/leemartin/thumbs_up.git"
 gem 'redcarpet'
 gem 'rails_config'
 gem 'kaminari'
