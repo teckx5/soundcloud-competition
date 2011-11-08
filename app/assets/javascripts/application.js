@@ -6,4 +6,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen.jquery.min
+//= require soundmanager2
+//= require jquery.timeago
+//= require jquery.tmpl
 //= require_tree .

@@ -19,24 +19,40 @@
     %h1.remove-top Want to Compete? Here's How.
     %hr.large
 
-    %div
-      %h2 1. Sign up for SoundCloud
-      %p SoundCloud is a platform that puts your sound at the heart of communities, websites and even apps. Watch conversations, connections and social experiences happen, with your sound as the spark.
-      %p
-        %a.button(href="http://soundcloud.com/signup" target="_blank") SoundCloud Sign-up
-    %hr
+    - if !current_user
 
-    %div
-      %h2 2. Upload your Track to SoundCloud
-      %p Upload your track to your SoundCloud account so it's available to submit once you login here. Be sure to include an artwork image, description, and set it to "Public."
-      %p
-        %a.button(href="http://soundcloud.com/upload" target="_blank") Upload your Track
-    %hr
+      %div
+        %h2 1. Sign up for SoundCloud
+        %p SoundCloud is a platform that puts your sound at the heart of communities, websites and even apps. Watch conversations, connections and social experiences happen, with your sound as the spark.
+        %p
+          %a.button(href="http://soundcloud.com/signup" target="_blank") SoundCloud Sign-up
+          
+    - else
+    
+      %div
+        %h2(style="text-decoration:line-through;color:lightgrey") 1. Sign up for SoundCloud
 
+    %hr
+    
     %div
-      %h2 3. Submit Your Track
-      %p Once you've created your SoundCloud account and uploaded your track to it, you may login below and select your track from a drop down list to include it in the competition.
+      %h2 2. Record your Submission        
       - if current_user
-        = render "form"
+        = render "record"
       - else
+        %p Once you've created your SoundCloud account, you may login below and then record your submission.
         %p= link_to "Login to Submit", login_link, :class => "button"
+
+    / %div
+    /   %h2 2. Upload your Track to SoundCloud
+    /   %p Upload your track to your SoundCloud account so it's available to submit once you login here. Be sure to include an artwork image, description, and set it to "Public."
+    /   %p
+    /     %a.button(href="http://soundcloud.com/upload" target="_blank") Upload your Track
+    / %hr
+    / 
+    / %div
+    /   %h2 3. Submit Your Track
+    /   %p Once you've created your SoundCloud account and uploaded your track to it, you may login below and select your track from a drop down list to include it in the competition.
+    /   - if current_user
+    /     = render "form"
+    /   - else
+    /     %p= link_to "Login to Submit", login_link, :class => "button"
