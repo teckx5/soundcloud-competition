@@ -19,7 +19,7 @@
     %meta(property="og:site_name" content="#{@competition.host}")
 
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
+    = javascript_include_tag "application", "http://connect.soundcloud.com/sdk.js"
     = csrf_meta_tags
 
   %body

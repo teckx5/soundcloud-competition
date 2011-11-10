@@ -13,39 +13,43 @@ jQuery ->
   $play     = $('.recorder .play')
   $stop     = $('.recorder .stop')
   $upload   = $('.upload')
-
-  Recorder.initialize
-    swfSrc: "/swfs/recorder.swf"
   
   record = () ->
-    Recorder.record
+    SC.record
       start: ->
         $record.text "Recording..."
       progress: (ms) ->
         console.log ms
-        
+    return false
+
   stop = () ->
     $record.text "Record"
     $play.text "Play"
-    Recorder.stop()
-      
+    SC.recordStop()
+    return false
+
   play = () ->
     stop()
-    Recorder.play
+    SC.recordPlay
       progress: (ms) ->
         console.log ms
-
+      finished: ->
+        console.log "back to recorded"
+    return false
+  
   upload = () ->
     $.ajax
       type: 'get'
       url: '/record'
       success: (url) ->
+        console.log url
         $upload.text "Uploading..."
         Recorder.upload
+          method: "POST"
           url: url
           audioParam: "track[asset_data]"
           params:
-            "track[title]": "Cheer"
+            "track[title]": "Test"
             "track[sharing]": "public"
           success: (res) ->
             $upload.text "Saving..."
@@ -58,23 +62,24 @@ jQuery ->
                 $upload.text "Redirecting..."
                 setTimeout "window.location='/tracks/#{data.id}'", 7500
               error: (err) ->
-                console.log "track creation failed"
+                console.error "track creation failed"
           error: (err) ->
-            console.log "upload to soundcloud failed"
+            console.error "upload to soundcloud failed"
       error: (err) ->
-        console.log "token grab failed"
+        console.error "token grab failed"
+    return false
   
   # GUI Actions
-  
+   
   $record.click ->
     if $record.text() == "Record"
       record()
     else
       return false
-      
+
   $play.click -> play()
   $stop.click -> stop()
-  
+
   $upload.click ->
     if $upload.hasClass('disabled')
       alert "You must agree to the rules to submit."

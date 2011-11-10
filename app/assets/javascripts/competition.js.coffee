@@ -116,12 +116,12 @@ jQuery ->
     else
       $('.new_track').submit()
     return false
-
+      
   $(':checkbox').click ->
     if $(@).is(':checked')
-      $('.new_track .submit').removeClass('disabled')
+      $('.new_track .submit, .upload').removeClass('disabled')
     else
-      $('.new_track .submit').addClass('disabled')
+      $('.new_track .submit, .upload').addClass('disabled')
 
   ## Comments
 

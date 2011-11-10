@@ -10,6 +10,7 @@ SoundCloudCompetition::Application.routes.draw do
 
   match "/tracks/:id/favorite" => 'tracks#favorite', :as => :favorite_track
   match "/submit" => 'tracks#new'
+  match "/record" => 'tracks#record'
 
   match "/votes" => 'votes#create', :via => :post
   match "/comments" => 'comments#create', :via => :post

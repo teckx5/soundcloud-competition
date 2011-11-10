@@ -17,11 +17,14 @@ class TracksController < ApplicationController
       redirect_to root_path
     end
   end
-
+  
   def create
-    track = current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json")
-    @track = current_user.tracks.identify_or_create_from_soundcloud(track)
-    redirect_to @track
+    track = current_user.soundcloud.get("/tracks/#{params[:track][:tid]}.json")    
+    @track = current_user.tracks.identify_or_create_from_soundcloud(track)    
+    respond_to do |format|
+      format.html { redirect_to @track, notice: 'Track was successfully submitted.' }
+      format.json { render json: @track, status: :created, location: @track }
+    end
   end
 
   def destroy
@@ -29,6 +32,8 @@ class TracksController < ApplicationController
     @track.destroy
     redirect_to root_path
   end
+  
+  # Favorite
 
   def favorite
     @track = Track.find(params[:id])
@@ -42,6 +47,12 @@ class TracksController < ApplicationController
     end
 
     render :json => res
+  end
+  
+  # Record
+  
+  def record
+    render :text => "https://api.soundcloud.com/tracks.json?oauth_token=#{current_user.token}"
   end
 
   private

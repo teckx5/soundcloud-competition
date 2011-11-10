@@ -50,6 +50,10 @@
   %p
     = f.label :rules, "Rules URL"
     = f.text_field :rules
+    
+  %p
+    = f.label :recording, "Record Submissions"
+    = f.select :recording, {'True' => true, 'False' => false}, {}, {:style => "width:100%"}
 
   %p
     %a.button.submit Update
