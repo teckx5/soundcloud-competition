@@ -1,4 +1,4 @@
-## Competition
+### Competition
 
 Host a contest, powered by [SoundCloud](http://soundcloud.com).
 
