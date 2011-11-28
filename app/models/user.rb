@@ -50,8 +50,8 @@ class User < ActiveRecord::Base
   end
 
   def soundcloud_groups
-    groups = soundcloud.get('/me/groups.json')
-    groups.delete_if {|g| g["creator"]["id"] != uid }
+    groups = soundcloud.get('/me/groups.json?limit=200')
+    groups.delete_if { |g| g.creator.nil? || g.creator.id != uid }
   end
 
   def link
